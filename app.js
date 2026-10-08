@@ -886,12 +886,18 @@
   let mediaRec = null, chunks = [];
   async function startRec() {
     try {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) throw Object.assign(new Error('nomedia'), { name: 'NoMediaDevices' });
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       chunks = [];
-      mediaRec = new MediaRecorder(stream);
+      let opts = {};
+      if (window.MediaRecorder && MediaRecorder.isTypeSupported) {
+        if (MediaRecorder.isTypeSupported('audio/mp4')) opts = { mimeType: 'audio/mp4' };
+        else if (MediaRecorder.isTypeSupported('audio/webm')) opts = { mimeType: 'audio/webm' };
+      }
+      mediaRec = new MediaRecorder(stream, opts);
       mediaRec.ondataavailable = e => chunks.push(e.data);
       mediaRec.onstop = () => {
-        const blob = new Blob(chunks, { type: 'audio/webm' });
+        const blob = new Blob(chunks, { type: mediaRec.mimeType || opts.mimeType || 'audio/mp4' });
         state.speakBlob = blob;
         const a = $('#recAudio');
         if (a) { a.src = URL.createObjectURL(blob); a.classList.remove('hidden'); }
@@ -902,8 +908,14 @@
       $('#recStart').disabled = true; $('#recStop').disabled = false;
       $('#recStatus').innerHTML = '<span class="rec-dot"></span> Kaydediliyor...';
     } catch (e) {
-      toast('Mikrofon izni yok veya desteklenmiyor (https/localhost gerekir)');
-      $('#recStatus').textContent = 'Mikrofon kullanılamıyor. Metin kutusuna yazabilirsin.';
+      const n = (e && e.name) || '';
+      let msg;
+      if (n === 'NotAllowedError' || n === 'SecurityError') msg = 'Mikrofon izni reddedildi. iPhone: Ayarlar > Safari (veya kullandığın tarayıcı uygulaması) > Mikrofon > İzin Ver. Sonra sayfayı yenile.';
+      else if (n === 'NotFoundError') msg = 'Mikrofon bulunamadı.';
+      else if (n === 'NoMediaDevices') msg = 'Bu tarayıcı mikrofona izin vermiyor. Linki Safari veya Chrome ile aç (uygulama içi tarayıcı değil).';
+      else msg = 'Mikrofon açılamadı (' + (n || (e && e.message) || 'bilinmeyen hata') + ').';
+      toast(msg);
+      $('#recStatus').textContent = msg + ' Bu arada cevabını metin kutusuna yazabilirsin.';
     }
   }
   function stopRec() {
@@ -912,7 +924,7 @@
   }
   function doSTT(forMock) {
     const r = getRecognition();
-    if (!r) { toast('SpeechRecognition desteklenmiyor (Chrome önerilir, https)'); return; }
+    if (!r) { toast('Bu tarayıcıda konuşmayı yazıya çevirme yok. iPhone\'da klavyedeki mikrofon tuşuyla da yazdırabilirsin.'); return; }
     r.onresult = ev => {
       const text = ev.results[0][0].transcript;
       if (forMock) {
@@ -924,7 +936,7 @@
       }
       toast('STT tamam');
     };
-    r.onerror = () => toast('STT hatası');
+    r.onerror = (ev) => toast(ev && (ev.error === 'not-allowed' || ev.error === 'service-not-allowed') ? 'Konuşma tanıma izni yok. iPhone: Ayarlar > Gizlilik ve Güvenlik > Konuşma Tanıma ve Mikrofon izinlerini aç.' : 'STT hatası: ' + ((ev && ev.error) || ''));
     r.start();
     toast('Konuş...');
   }
