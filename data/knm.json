@@ -1,0 +1,1726 @@
+{
+  "themes": [
+    {
+      "id": "werk",
+      "nl": "Werk en inkomen",
+      "tr": "İş ve gelir"
+    },
+    {
+      "id": "omgang",
+      "nl": "Omgangsvormen, waarden en normen",
+      "tr": "Görgü, değerler ve normlar"
+    },
+    {
+      "id": "wonen",
+      "nl": "Wonen",
+      "tr": "Barınma"
+    },
+    {
+      "id": "gezondheid",
+      "nl": "Gezondheid en gezondheidszorg",
+      "tr": "Sağlık ve sağlık sistemi"
+    },
+    {
+      "id": "geschiedenis",
+      "nl": "Geschiedenis en geografie",
+      "tr": "Tarih ve coğrafya"
+    },
+    {
+      "id": "instanties",
+      "nl": "Instanties",
+      "tr": "Kurumlar"
+    },
+    {
+      "id": "staat",
+      "nl": "Staatsinrichting en rechtsstaat",
+      "tr": "Devlet yapısı ve hukuk devleti"
+    },
+    {
+      "id": "onderwijs",
+      "nl": "Onderwijs en opvoeding",
+      "tr": "Eğitim ve çocuk yetiştirme"
+    }
+  ],
+  "questions": [
+    {
+      "id": "k001",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "Bir iş ararken en sık nereye bakarsın?",
+      "choices": [
+        "sadece arkadaşlara",
+        "vacatures / werk.nl / uitzendbureau",
+        "sadece belediye binasına"
+      ],
+      "answer": 1,
+      "explain_tr": "İş ilanları, werk.nl ve geçici iş büroları yaygındır."
+    },
+    {
+      "id": "k002",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "Hollanda'da asgari ücret (minimumloon) ne demektir?",
+      "choices": [
+        "isteğe bağlı bağış",
+        "yasayla belirlenmiş en düşük ücret",
+        "sadece staj için"
+      ],
+      "answer": 1,
+      "explain_tr": "İşveren en az asgari ücreti ödemelidir."
+    },
+    {
+      "id": "k003",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "İşsiz kalınca ilk başvurabileceğin kurum?",
+      "choices": [
+        "IND",
+        "UWV",
+        "COA"
+      ],
+      "answer": 1,
+      "explain_tr": "UWV işsizlik ve bazı sosyal sigorta işleriyle ilgilenir."
+    },
+    {
+      "id": "k004",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "Sollicitatiegesprek nedir?",
+      "choices": [
+        "doktor randevusu",
+        "iş görüşmesi",
+        "vergi ödemesi"
+      ],
+      "answer": 1,
+      "explain_tr": "İş başvurusundan sonra yapılan görüşme."
+    },
+    {
+      "id": "k005",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "Loonstrookje nedir?",
+      "choices": [
+        "kira sözleşmesi",
+        "maaş bordrosu",
+        "pasaport"
+      ],
+      "answer": 1,
+      "explain_tr": "Maaş detaylarını gösteren belge."
+    },
+    {
+      "id": "k006",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "Parttime ne demek?",
+      "choices": [
+        "tam gün",
+        "yarı zamanlı çalışma",
+        "ücretsiz staj"
+      ],
+      "answer": 1,
+      "explain_tr": "Haftada daha az saat çalışma."
+    },
+    {
+      "id": "k007",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "Belastingdienst neyle ilgilenir?",
+      "choices": [
+        "sadece spor",
+        "vergiler ve birçok toeslag",
+        "sadece otobüs"
+      ],
+      "answer": 1,
+      "explain_tr": "Vergi dairesi; birçok yardım da buradan."
+    },
+    {
+      "id": "k008",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "Zorgtoeslag nedir?",
+      "choices": [
+        "kira",
+        "sağlık sigortası için gelir durumuna göre yardım",
+        "okul harcı"
+      ],
+      "answer": 1,
+      "explain_tr": "Düşük gelirde zorgverzekering için katkı."
+    },
+    {
+      "id": "k009",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "İş yerinde güvenlik kuralına uymamak?",
+      "choices": [
+        "önemsiz",
+        "tehlikeli ve kurallara aykırı olabilir",
+        "sadece yöneticinin işi"
+      ],
+      "answer": 1,
+      "explain_tr": "Veiligheid op het werk önemlidir."
+    },
+    {
+      "id": "k010",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "Vrijwilligerswerk nedir?",
+      "choices": [
+        "ücretli tam iş",
+        "gönüllü / ücretsiz katkı",
+        "yasak faaliyet"
+      ],
+      "answer": 1,
+      "explain_tr": "Topluma gönüllü katılım."
+    },
+    {
+      "id": "k011",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "CAO nedir?",
+      "choices": [
+        "bisiklet markası",
+        "toplu iş sözleşmesi",
+        "okul türü"
+      ],
+      "answer": 1,
+      "explain_tr": "Sektörde çalışma koşullarını düzenler."
+    },
+    {
+      "id": "k012",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "Proeftijd nedir?",
+      "choices": [
+        "tatil",
+        "deneme süresi",
+        "emeklilik"
+      ],
+      "answer": 1,
+      "explain_tr": "İşin başında deneme dönemi."
+    },
+    {
+      "id": "k013",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "Vakantiegeld genelde ne zaman konuşulur?",
+      "choices": [
+        "kışın hep",
+        "çoğu kişide mayıs civarı ekstra ödeme",
+        "hiç olmaz"
+      ],
+      "answer": 1,
+      "explain_tr": "Birçok çalışan mayısta vakantiegeld alır."
+    },
+    {
+      "id": "k014",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "Uitzendbureau ne işe yarar?",
+      "choices": [
+        "pasaport",
+        "geçici iş bulmaya yardım",
+        "ev satışı"
+      ],
+      "answer": 1,
+      "explain_tr": "Geçici işler için aracı kurum."
+    },
+    {
+      "id": "k015",
+      "theme": "werk",
+      "theme_nl": "Werk en inkomen",
+      "theme_tr": "İş ve gelir",
+      "q": "Inkomen nedir?",
+      "choices": [
+        "sadece borcun",
+        "gelir (maaş vb.)",
+        "sadece vergi"
+      ],
+      "answer": 1,
+      "explain_tr": "Kazandığın para / gelir."
+    },
+    {
+      "id": "k016",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Hollanda'da 'afspraak is afspraak' ne anlama gelir?",
+      "choices": [
+        "randevu yok",
+        "verilen söz / randevu önemlidir",
+        "sadece parti için"
+      ],
+      "answer": 1,
+      "explain_tr": "Kararlaştırılan şeye uyulması beklenir."
+    },
+    {
+      "id": "k017",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Discriminatie Hollanda'da?",
+      "choices": [
+        "serbest",
+        "yasaktır",
+        "sadece iş yerinde serbest"
+      ],
+      "answer": 1,
+      "explain_tr": "Ayrımcılık yasaktır."
+    },
+    {
+      "id": "k018",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Vrijheid van meningsuiting nedir?",
+      "choices": [
+        "sadece şarkı söylemek",
+        "ifade özgürlüğü (ama nefret/şiddet yasak)",
+        "vergi muafiyeti"
+      ],
+      "answer": 1,
+      "explain_tr": "Düşünceni söyleyebilirsin; sınırlar vardır."
+    },
+    {
+      "id": "k019",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Kadınların kendi bedeni ve seçimleri üzerinde hakkı?",
+      "choices": [
+        "yok",
+        "var; zelfbeschikking önemlidir",
+        "sadece evliyse"
+      ],
+      "answer": 1,
+      "explain_tr": "Yeni KNM'de kadınların kendi karar hakkı vurgulanır."
+    },
+    {
+      "id": "k020",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Dini kurallar ile devlet yasası çatışırsa?",
+      "choices": [
+        "din her zaman üstün",
+        "Hollanda'da yasa geçerlidir",
+        "komşu karar verir"
+      ],
+      "answer": 1,
+      "explain_tr": "Rechtsstaat: yasa herkes için geçerlidir."
+    },
+    {
+      "id": "k021",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "El sıkışmak (handen schudden)?",
+      "choices": [
+        "yasak",
+        "sık görülen bir selamlaşma biçimi olabilir",
+        "sadece çocuklar"
+      ],
+      "answer": 1,
+      "explain_tr": "Birçok durumda el sıkışılır; saygı önemlidir."
+    },
+    {
+      "id": "k022",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Randevuya geç kalmak?",
+      "choices": [
+        "hiç sorun değil",
+        "genelde hoş karşılanmaz; haber vermek iyi",
+        "zorunlu"
+      ],
+      "answer": 1,
+      "explain_tr": "Op tijd komen önemlidir."
+    },
+    {
+      "id": "k023",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Hayır demek?",
+      "choices": [
+        "imkânsız",
+        "mümkün ve kabul edilir",
+        "sadece yazıyla"
+      ],
+      "answer": 1,
+      "explain_tr": "Sınır koymak / nee zeggen kabul edilir."
+    },
+    {
+      "id": "k024",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Holocaust bilgisi KNM'de neden geçer?",
+      "choices": [
+        "spor için",
+        "Hollanda tarihi ve antisemitizm farkındalığı için",
+        "sadece coğrafya"
+      ],
+      "answer": 1,
+      "explain_tr": "2025 itibarıyla Holocaust bilgisi vurgulanır."
+    },
+    {
+      "id": "k025",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Antisemitizm nedir?",
+      "choices": [
+        "spor dalı",
+        "Yahudilere karşı düşmanlık / ayrımcılık",
+        "yemek türü"
+      ],
+      "answer": 1,
+      "explain_tr": "Tanınması ve reddedilmesi beklenir."
+    },
+    {
+      "id": "k026",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Herkes yasalar önünde?",
+      "choices": [
+        "eşit değil",
+        "eşit (gelijkheid)",
+        "sadece vatandaşlar eşit"
+      ],
+      "answer": 1,
+      "explain_tr": "Gelijkheid temel değerdir."
+    },
+    {
+      "id": "k027",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Tanımadığın birine 'je' mi 'u' mu?",
+      "choices": [
+        "hep je",
+        "duruma göre; resmi kişilerde çoğunlukla u",
+        "hep u çocuklara"
+      ],
+      "answer": 1,
+      "explain_tr": "Resmiyet derecesine göre değişir."
+    },
+    {
+      "id": "k028",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Komşularla iyi geçinmek?",
+      "choices": [
+        "zorunlu parti",
+        "gürültüye dikkat, selamlaşmak iyi",
+        "hiç konuşma"
+      ],
+      "answer": 1,
+      "explain_tr": "Omgang in de buurt önemlidir."
+    },
+    {
+      "id": "k029",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "LHBTI hakları Hollanda'da?",
+      "choices": [
+        "yok",
+        "yasal koruma ve eşitlik hedeflenir",
+        "sadece Amsterdam'da"
+      ],
+      "answer": 1,
+      "explain_tr": "Eşit muamele ve haklar çerçevesi vardır."
+    },
+    {
+      "id": "k030",
+      "theme": "omgang",
+      "theme_nl": "Omgangsvormen, waarden en normen",
+      "theme_tr": "Görgü, değerler ve normlar",
+      "q": "Şiddet / tehdit?",
+      "choices": [
+        "özel mesele",
+        "yasadışıdır; yardım / polis mümkün",
+        "sadece aile içi serbest"
+      ],
+      "answer": 1,
+      "explain_tr": "Şiddet kabul edilmez."
+    },
+    {
+      "id": "k031",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Huurtoeslag nedir?",
+      "choices": [
+        "elektrik faturası",
+        "kira için gelir bazlı yardım",
+        "okul harcı"
+      ],
+      "answer": 1,
+      "explain_tr": "Belastingdienst üzerinden kira yardımı."
+    },
+    {
+      "id": "k032",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Grijze container genelde ne içindir?",
+      "choices": [
+        "sadece cam",
+        "genel çöp",
+        "sadece bahçe"
+      ],
+      "answer": 1,
+      "explain_tr": "Restafval için gri konteyner yaygındır."
+    },
+    {
+      "id": "k033",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "GFT nedir?",
+      "choices": [
+        "gaz",
+        "meyve/sebze/bahçe atığı",
+        "metal"
+      ],
+      "answer": 1,
+      "explain_tr": "Yeşil konteyner / organik atık."
+    },
+    {
+      "id": "k034",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Enerji tasarrufu için basit yol?",
+      "choices": [
+        "pencereyi kışın açık bırak",
+        "ısıtmayı bir derece düşürmek işe yarayabilir",
+        "tüm ışıkları 7/24 yak"
+      ],
+      "answer": 1,
+      "explain_tr": "Küçük alışkanlıklar faturayı etkiler."
+    },
+    {
+      "id": "k035",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Woningcorporatie nedir?",
+      "choices": [
+        "spor kulübü",
+        "sosyal kiralık konut kuruluşu",
+        "restoran"
+      ],
+      "answer": 1,
+      "explain_tr": "Uygun fiyatlı kiralık konut sağlar."
+    },
+    {
+      "id": "k036",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Borg nedir?",
+      "choices": [
+        "maaş",
+        "depozito",
+        "vergi"
+      ],
+      "answer": 1,
+      "explain_tr": "Kira başında yatırılan güvence."
+    },
+    {
+      "id": "k037",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Adres değiştirince ne yapmalısın?",
+      "choices": [
+        "hiçbir şey",
+        "belediyeye (BRP) bildir",
+        "sadece komşuya söyle"
+      ],
+      "answer": 1,
+      "explain_tr": "Verhuizing doorgeven zorunludur."
+    },
+    {
+      "id": "k038",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Marka / burenoverlast (gürültü) uzun sürerse?",
+      "choices": [
+        "sadece bağır",
+        "önce konuş; gerekirse belediye / yardım hatları",
+        "yasa dışı değil"
+      ],
+      "answer": 1,
+      "explain_tr": "Adım adım çözüm aranır."
+    },
+    {
+      "id": "k039",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Nutsvoorzieningen örnekleri?",
+      "choices": [
+        "sadece Netflix",
+        "gaz, elektrik, su, internet",
+        "sadece mobilya"
+      ],
+      "answer": 1,
+      "explain_tr": "Temel konut hizmetleri."
+    },
+    {
+      "id": "k040",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Brandweer / yangın alarmı çalarsa?",
+      "choices": [
+        "yoksay",
+        "talimatlara uy; gerçekse binayı terk et",
+        "pencereyi kapat ve bekle hep"
+      ],
+      "answer": 1,
+      "explain_tr": "Güvenlik kurallarına uy."
+    },
+    {
+      "id": "k041",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Kamer huren (onderhuur) her zaman serbest mi?",
+      "choices": [
+        "evet her zaman",
+        "çoğu sözleşmede kısıtlı / izinsiz yasak olabilir",
+        "sadece yazın"
+      ],
+      "answer": 1,
+      "explain_tr": "Sözleşmeye bak."
+    },
+    {
+      "id": "k042",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Afval verkeerd ayırmak?",
+      "choices": [
+        "ödül getirir",
+        "sorun yaratabilir; kurallara uy",
+        "önemsiz"
+      ],
+      "answer": 1,
+      "explain_tr": "Ayrı toplama kuralları vardır."
+    },
+    {
+      "id": "k043",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Servicekosten nedir?",
+      "choices": [
+        "sadece elektrik",
+        "ortak giderler (temizlik, asansör vb.) olabilir",
+        "vergi iadesi"
+      ],
+      "answer": 1,
+      "explain_tr": "Kira yanında ortak hizmet bedeli."
+    },
+    {
+      "id": "k044",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Sleutel kwijt — ilk adım?",
+      "choices": [
+        "kapıyı kır",
+        "kilitçi / verhuurder ile iletişime geç",
+        "bekle bir ay"
+      ],
+      "answer": 1,
+      "explain_tr": "Güvenli çözüm ara."
+    },
+    {
+      "id": "k045",
+      "theme": "wonen",
+      "theme_nl": "Wonen",
+      "theme_tr": "Barınma",
+      "q": "Schoonhouden van galerij / portiek?",
+      "choices": [
+        "sadece belediye",
+        "sakinlerin de sorumluluğu olabilir",
+        "yasak"
+      ],
+      "answer": 1,
+      "explain_tr": "Ortak alanlara dikkat."
+    },
+    {
+      "id": "k046",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "İlk başvurulacak doktor genelde?",
+      "choices": [
+        "doğrudan hastane acil her şey için",
+        "huisarts (aile hekimi)",
+        "eczane cerrahı"
+      ],
+      "answer": 1,
+      "explain_tr": "Önce huisarts; acilde 112."
+    },
+    {
+      "id": "k047",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "Zorgverzekering Hollanda'da?",
+      "choices": [
+        "isteğe bağlı",
+        "zorunlu temel sigorta",
+        "sadece çocuklar"
+      ],
+      "answer": 1,
+      "explain_tr": "Herkes temel zorgverzekering yaptırmalı."
+    },
+    {
+      "id": "k048",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "POH (praktijkondersteuner) nedir?",
+      "choices": [
+        "polis",
+        "aile hekimi muayenehanesinde destekleyen profesyonel",
+        "taksi"
+      ],
+      "answer": 1,
+      "explain_tr": "Yeni KNM'de POH rolü geçer."
+    },
+    {
+      "id": "k049",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "112 ne zaman?",
+      "choices": [
+        "pizza siparişi",
+        "hayati tehlike / acil durum",
+        "randevu iptali"
+      ],
+      "answer": 1,
+      "explain_tr": "Acil numara."
+    },
+    {
+      "id": "k050",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "Huisartsenpost ne zaman?",
+      "choices": [
+        "sadece sabah",
+        "mesai dışı acil ama hayati olmayan durumlar",
+        "hiç"
+      ],
+      "answer": 1,
+      "explain_tr": "Akşam/hafta sonu aile hekimi nöbeti."
+    },
+    {
+      "id": "k051",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "Recept (reçete) nereden alınır genelde?",
+      "choices": [
+        "süpermarket kasa",
+        "apotheek (eczane)",
+        "okul"
+      ],
+      "answer": 1,
+      "explain_tr": "İlaç eczaneden."
+    },
+    {
+      "id": "k052",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "Eigen risico nedir?",
+      "choices": [
+        "ücretsiz her şey",
+        "sigortada senin ödediğin ilk kısım",
+        "sadece diş"
+      ],
+      "answer": 1,
+      "explain_tr": "Yıllık katılım payı."
+    },
+    {
+      "id": "k053",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "Tandarts temel sigortada tamamen ücretsiz mi?",
+      "choices": [
+        "her zaman evet",
+        "çoğu yetişkin için ekstra / kısmen",
+        "hiç yok"
+      ],
+      "answer": 1,
+      "explain_tr": "Diş sıkça ek sigorta ister."
+    },
+    {
+      "id": "k054",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "GGD neyle bilinir?",
+      "choices": [
+        "sadece spor",
+        "halk sağlığı / bulaşıcı hastalıklar vb.",
+        "bankacılık"
+      ],
+      "answer": 1,
+      "explain_tr": "Belediye sağlık hizmetleri."
+    },
+    {
+      "id": "k055",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "Ziekmelden işte?",
+      "choices": [
+        "gerekmez",
+        "işverene bildirmen gerekir",
+        "sadece e-posta yasa"
+      ],
+      "answer": 1,
+      "explain_tr": "Hastalık bildirimi kuralı vardır."
+    },
+    {
+      "id": "k056",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "Zwangerschapzorg?",
+      "choices": [
+        "yok",
+        "verloskundige / zorg sistemi içinde takip",
+        "sadece evde"
+      ],
+      "answer": 1,
+      "explain_tr": "Hamilelikte takip mümkündür."
+    },
+    {
+      "id": "k057",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "Mentale klachten (ruhsal) için?",
+      "choices": [
+        "sadece bekle",
+        "huisarts / POH / yardım hatları",
+        "yasak konuşmak"
+      ],
+      "answer": 1,
+      "explain_tr": "Yardım istemek mümkün."
+    },
+    {
+      "id": "k058",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "Medicijnen usage bilgisini kim verir?",
+      "choices": [
+        "sadece komşu",
+        "apotheek / arts",
+        "otobüs şoförü"
+      ],
+      "answer": 1,
+      "explain_tr": "Eczacı ve doktor."
+    },
+    {
+      "id": "k059",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "Donorregister ile ilgili?",
+      "choices": [
+        "yok sistem",
+        "organ bağışı kaydı sistemi vardır",
+        "sadece yabancılar"
+      ],
+      "answer": 1,
+      "explain_tr": "Kayıt sistemi mevcuttur."
+    },
+    {
+      "id": "k060",
+      "theme": "gezondheid",
+      "theme_nl": "Gezondheid en gezondheidszorg",
+      "theme_tr": "Sağlık ve sağlık sistemi",
+      "q": "Roken in openbare gebouwen?",
+      "choices": [
+        "serbest her yer",
+        "çoğu kapalı alanda kısıtlı / yasak",
+        "zorunlu"
+      ],
+      "answer": 1,
+      "explain_tr": "Kapalı alanlarda sigara yasağı yaygındır."
+    },
+    {
+      "id": "k061",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "Hollanda'nın başkenti?",
+      "choices": [
+        "Rotterdam",
+        "Amsterdam",
+        "Den Haag"
+      ],
+      "answer": 1,
+      "explain_tr": "Amsterdam başkenttir; hükümet Den Haag'dadır."
+    },
+    {
+      "id": "k062",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "Hükümet / parlement nerede yoğun?",
+      "choices": [
+        "Maastricht",
+        "Den Haag",
+        "Groningen"
+      ],
+      "answer": 1,
+      "explain_tr": "Den Haag siyasi merkezdir."
+    },
+    {
+      "id": "k063",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "Nederland kaç eyalet (provincie) yaklaşık?",
+      "choices": [
+        "3",
+        "12",
+        "50"
+      ],
+      "answer": 1,
+      "explain_tr": "12 provincie."
+    },
+    {
+      "id": "k064",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "Tweede Wereldoorlog / Holocaust?",
+      "choices": [
+        "sadece Asya",
+        "Hollanda tarihinde işgal ve Yahudi soykırımı bilgisi önemli",
+        "yok"
+      ],
+      "answer": 1,
+      "explain_tr": "Tarih bilinci KNM'de."
+    },
+    {
+      "id": "k065",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "Koninkrijk / kral?",
+      "choices": [
+        "yok kral",
+        "anayasal monarşi; kral/kraliçe devlet başı rolünde",
+        "sadece belediye başkanı"
+      ],
+      "answer": 1,
+      "explain_tr": "Hollanda krallıktır."
+    },
+    {
+      "id": "k066",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "Water / dijken neden önemli?",
+      "choices": [
+        "sadece turistik",
+        "ülkenin bir kısmı deniz seviyesinin altında",
+        "hiç su yok"
+      ],
+      "answer": 1,
+      "explain_tr": "Su yönetimi kritiktir."
+    },
+    {
+      "id": "k067",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "Randstad nedir?",
+      "choices": [
+        "dağ",
+        "büyük şehirler bölgesi (Amsterdam-Rotterdam-Den Haag-Utrecht)",
+        "orman"
+      ],
+      "answer": 1,
+      "explain_tr": "Yoğun nüfuslu batı bölgesi."
+    },
+    {
+      "id": "k068",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "Bevrijdingsdag genelde?",
+      "choices": [
+        "1 Ocak",
+        "5 Mayıs",
+        "her Pazartesi"
+      ],
+      "answer": 1,
+      "explain_tr": "Kurtuluş günü 5 Mayıs."
+    },
+    {
+      "id": "k069",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "Koningsdag?",
+      "choices": [
+        "kralın doğum günü kutlaması (turuncu bayram)",
+        "vergi günü",
+        "sınav günü"
+      ],
+      "answer": 1,
+      "explain_tr": "Ulusal bayram atmosferi."
+    },
+    {
+      "id": "k070",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "EU üyesi mi?",
+      "choices": [
+        "hayır",
+        "evet",
+        "sadece euro yok"
+      ],
+      "answer": 1,
+      "explain_tr": "Hollanda AB üyesidir; euro kullanır."
+    },
+    {
+      "id": "k071",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "Nederlandse Antillen / Caribisch Nederland?",
+      "choices": [
+        "yok bağ",
+        "Krallık ile bağları olan adalar vardır",
+        "sadece Fransa"
+      ],
+      "answer": 1,
+      "explain_tr": "Karayip bağlantısı."
+    },
+    {
+      "id": "k072",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "VOC tarihsel olarak?",
+      "choices": [
+        "modern süpermarket",
+        "tarihte ticaret şirketi / sömürge dönemi",
+        "okul türü"
+      ],
+      "answer": 1,
+      "explain_tr": "Tarih konusu."
+    },
+    {
+      "id": "k073",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "Tolerantie / polderen kültürel olarak?",
+      "choices": [
+        "savaş",
+        "uzlaşma / birlikte çözüm arama imgesi",
+        "spor"
+      ],
+      "answer": 1,
+      "explain_tr": "Toplumsal imge."
+    },
+    {
+      "id": "k074",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "IJsselmeer nedir?",
+      "choices": [
+        "dağ",
+        "eski denizden oluşturulmuş büyük göl",
+        "çöl"
+      ],
+      "answer": 1,
+      "explain_tr": "Coğrafya."
+    },
+    {
+      "id": "k075",
+      "theme": "geschiedenis",
+      "theme_nl": "Geschiedenis en geografie",
+      "theme_tr": "Tarih ve coğrafya",
+      "q": "Hoogste punt Nederland?",
+      "choices": [
+        "Alpler",
+        "Vaalserberg (Limburg, düşük tepe)",
+        "volkan"
+      ],
+      "answer": 1,
+      "explain_tr": "Ülke düz ağırlıklıdır."
+    },
+    {
+      "id": "k076",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "DUO neyle bilinir?",
+      "choices": [
+        "sadece polis",
+        "öğrenci finansmanı ve inburgering sınavları",
+        "restoran"
+      ],
+      "answer": 1,
+      "explain_tr": "Inburgering sınavları DUO ile."
+    },
+    {
+      "id": "k077",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "IND ne yapar?",
+      "choices": [
+        "spor",
+        "göç / oturma izni süreçleri",
+        "çöp toplama"
+      ],
+      "answer": 1,
+      "explain_tr": "Immigratie- en Naturalisatiedienst."
+    },
+    {
+      "id": "k078",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "Gemeente loket örneği?",
+      "choices": [
+        "pasaport / adres / uittreksel",
+        "sadece pizza",
+        "sadece uçak bileti"
+      ],
+      "answer": 1,
+      "explain_tr": "Yerel hizmetler belediyede."
+    },
+    {
+      "id": "k079",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "DigiD nedir?",
+      "choices": [
+        "oyun",
+        "devlet hizmetlerine giriş aracı",
+        "bisiklet"
+      ],
+      "answer": 1,
+      "explain_tr": "Dijital kimlik."
+    },
+    {
+      "id": "k080",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "Belastingdienst toeslagen?",
+      "choices": [
+        "yok",
+        "zorgtoeslag, huurtoeslag vb.",
+        "sadece ceza"
+      ],
+      "answer": 1,
+      "explain_tr": "Yardım başvuruları."
+    },
+    {
+      "id": "k081",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "UWV?",
+      "choices": [
+        "müze",
+        "işsizlik / iş gücü sigortası kurumu",
+        "okul"
+      ],
+      "answer": 1,
+      "explain_tr": "Werk en inkomen."
+    },
+    {
+      "id": "k082",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "Politie acil olmayan ihbar?",
+      "choices": [
+        "112 hep",
+        "çoğu yerde 0900-8844",
+        "DUO"
+      ],
+      "answer": 1,
+      "explain_tr": "Acil değilse farklı hat."
+    },
+    {
+      "id": "k083",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "Brandweer?",
+      "choices": [
+        "vergi",
+        "itfaiye",
+        "banka"
+      ],
+      "answer": 1,
+      "explain_tr": "Yangın / kurtarma."
+    },
+    {
+      "id": "k084",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "Ambulance?",
+      "choices": [
+        "taksi",
+        "acil sağlık aracı",
+        "postacı"
+      ],
+      "answer": 1,
+      "explain_tr": "112 ile."
+    },
+    {
+      "id": "k085",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "Rechtsbijstand / juridisch loket?",
+      "choices": [
+        "yemek",
+        "hukuki yardım imkânı",
+        "spor"
+      ],
+      "answer": 1,
+      "explain_tr": "Düşük gelirde hukuki destek."
+    },
+    {
+      "id": "k086",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "Kadaster?",
+      "choices": [
+        "spor kulübü",
+        "tapu / gayrimenkul kayıt",
+        "okul"
+      ],
+      "answer": 1,
+      "explain_tr": "Mülkiyet kayıtları."
+    },
+    {
+      "id": "k087",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "KvK (Kamer van Koophandel)?",
+      "choices": [
+        "hastane",
+        "ticaret odası / işletme kaydı",
+        "polis"
+      ],
+      "answer": 1,
+      "explain_tr": "Şirket kurunca."
+    },
+    {
+      "id": "k088",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "CJIB?",
+      "choices": [
+        "okul",
+        "trafik cezaları vb. tahsilat",
+        "fırın"
+      ],
+      "answer": 1,
+      "explain_tr": "Ceza ödemeleri."
+    },
+    {
+      "id": "k089",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "Consumentenbond?",
+      "choices": [
+        "devlet vergi",
+        "tüketici örgütü",
+        "ordu"
+      ],
+      "answer": 1,
+      "explain_tr": "Tüketici hakları."
+    },
+    {
+      "id": "k090",
+      "theme": "instanties",
+      "theme_nl": "Instanties",
+      "theme_tr": "Kurumlar",
+      "q": "Meldpunt discriminatie?",
+      "choices": [
+        "yok",
+        "ayrımcılık için başvuru noktaları vardır",
+        "sadece yurt dışı"
+      ],
+      "answer": 1,
+      "explain_tr": "Şikâyet imkânı."
+    },
+    {
+      "id": "k091",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Tweede Kamer nedir?",
+      "choices": [
+        "spor salonu",
+        "parlamentonun ikinci meclisi (seçilmiş)",
+        "okul sınıfı"
+      ],
+      "answer": 1,
+      "explain_tr": "Yasama."
+    },
+    {
+      "id": "k092",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Stemrecht (oy hakkı) genelde?",
+      "choices": [
+        "hiç kimse",
+        "belirli koşullarda vatandaşlar oy kullanır",
+        "sadece turistler"
+      ],
+      "answer": 1,
+      "explain_tr": "Demokrasi."
+    },
+    {
+      "id": "k093",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Rechtsstaat ilkesi?",
+      "choices": [
+        "kral her şeyin üstünde",
+        "yasa herkes için; güçler ayrılığı",
+        "sadece polis yasa"
+      ],
+      "answer": 1,
+      "explain_tr": "Hukuk devleti."
+    },
+    {
+      "id": "k094",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Grondwet nedir?",
+      "choices": [
+        "yemek tarifi",
+        "anayasa",
+        "otobüs tarifesi"
+      ],
+      "answer": 1,
+      "explain_tr": "Temel yasa."
+    },
+    {
+      "id": "k095",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Burgemeester ne yapar?",
+      "choices": [
+        "sadece öğretmen",
+        "belediye başkanı; yerel yönetim",
+        "tren şoförü"
+      ],
+      "answer": 1,
+      "explain_tr": "Gemeente yönetimi."
+    },
+    {
+      "id": "k096",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Provincie rolü?",
+      "choices": [
+        "yok",
+        "bölgesel yönetim katmanı",
+        "sadece futbol"
+      ],
+      "answer": 1,
+      "explain_tr": "12 provincie."
+    },
+    {
+      "id": "k097",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Eerste Kamer?",
+      "choices": [
+        "futbol takımı",
+        "Senato benzeri meclis",
+        "mağaza"
+      ],
+      "answer": 1,
+      "explain_tr": "Parlamentonun diğer kanadı."
+    },
+    {
+      "id": "k098",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Minister-president?",
+      "choices": [
+        "kral",
+        "başbakan",
+        "belediye zabıtası"
+      ],
+      "answer": 1,
+      "explain_tr": "Hükümet başı."
+    },
+    {
+      "id": "k099",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Scheiding van kerk en staat?",
+      "choices": [
+        "kilise yasaları yönetir",
+        "din ve devlet işleri ayrılır",
+        "yasak din"
+      ],
+      "answer": 1,
+      "explain_tr": "Laik çerçeve."
+    },
+    {
+      "id": "k100",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Persvrijheid?",
+      "choices": [
+        "yok basın",
+        "basın özgürlüğü vardır (sınırlarla)",
+        "sadece devlet gazetesi"
+      ],
+      "answer": 1,
+      "explain_tr": "Demokratik değer."
+    },
+    {
+      "id": "k101",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Rechter / rechterlijke macht?",
+      "choices": [
+        "alışveriş",
+        "yargı erki",
+        "spor"
+      ],
+      "answer": 1,
+      "explain_tr": "Bağımsız yargı."
+    },
+    {
+      "id": "k102",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Gemeenteraad?",
+      "choices": [
+        "okul kurulu sadece",
+        "belediye meclisi",
+        "hastane"
+      ],
+      "answer": 1,
+      "explain_tr": "Yerel seçilmiş meclis."
+    },
+    {
+      "id": "k103",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Wet boven cultuur/religie?",
+      "choices": [
+        "hayır",
+        "evet, yasa üstündür (KNM vurgusu)",
+        "sadece cuma"
+      ],
+      "answer": 1,
+      "explain_tr": "2025 eindtermen vurgusu."
+    },
+    {
+      "id": "k104",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Demonstreerrecht?",
+      "choices": [
+        "yasak hep",
+        "barışçıl gösteri hakkı çerçevesi vardır",
+        "sadece gece"
+      ],
+      "answer": 1,
+      "explain_tr": "Hak ve sınırlar."
+    },
+    {
+      "id": "k105",
+      "theme": "staat",
+      "theme_nl": "Staatsinrichting en rechtsstaat",
+      "theme_tr": "Devlet yapısı ve hukuk devleti",
+      "q": "Corruption / omkoping?",
+      "choices": [
+        "serbest",
+        "yasadışı",
+        "sadece küçük hediyeler zorunlu"
+      ],
+      "answer": 1,
+      "explain_tr": "Yolsuzluk yasaktır."
+    },
+    {
+      "id": "k106",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Basisschool yaş aralığı kabaca?",
+      "choices": [
+        "0-3",
+        "4-12",
+        "18-25"
+      ],
+      "answer": 1,
+      "explain_tr": "İlkokul."
+    },
+    {
+      "id": "k107",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Leerplicht nedir?",
+      "choices": [
+        "isteğe bağlı okul",
+        "zorunlu eğitim yaşı",
+        "sadece spor"
+      ],
+      "answer": 1,
+      "explain_tr": "Çocuklar okula gitmeli."
+    },
+    {
+      "id": "k108",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "MBO nedir?",
+      "choices": [
+        "hastane",
+        "mesleki ortaöğretim",
+        "sadece üniversite"
+      ],
+      "answer": 1,
+      "explain_tr": "Beroepsonderwijs."
+    },
+    {
+      "id": "k109",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "HAVO/VWO?",
+      "choices": [
+        "spor",
+        "genel ortaöğretim türleri",
+        "vergi"
+      ],
+      "answer": 1,
+      "explain_tr": "Ortaöğretim seviyeleri."
+    },
+    {
+      "id": "k110",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Kinderopvang?",
+      "choices": [
+        "hapishane",
+        "çocuk bakımı / kreş",
+        "banka"
+      ],
+      "answer": 1,
+      "explain_tr": "Çalışan ebeveynler için."
+    },
+    {
+      "id": "k111",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Ouderavond?",
+      "choices": [
+        "parti",
+        "veli-öğretmen toplantısı",
+        "sınav"
+      ],
+      "answer": 1,
+      "explain_tr": "Okulda bilgilendirme."
+    },
+    {
+      "id": "k112",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Inburgeringscursus?",
+      "choices": [
+        "yüzme",
+        "Hollandaca ve toplum bilgisi kursu",
+        "sadece matematik"
+      ],
+      "answer": 1,
+      "explain_tr": "Uyum eğitimi."
+    },
+    {
+      "id": "k113",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Nt2?",
+      "choices": [
+        "yemek",
+        "Nederlands als tweede taal",
+        "araba markası"
+      ],
+      "answer": 1,
+      "explain_tr": "İkinci dil olarak Hollandaca."
+    },
+    {
+      "id": "k114",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Schoolreis izin?",
+      "choices": [
+        "gerekmez",
+        "genelde ebeveyn izni gerekir",
+        "sadece çocuk imzası"
+      ],
+      "answer": 1,
+      "explain_tr": "Toestemming."
+    },
+    {
+      "id": "k115",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Pesten (zorbalık) okulda?",
+      "choices": [
+        "görmezden gel zorunlu",
+        "okul politikası / bildirim önemli",
+        "teşvik edilir"
+      ],
+      "answer": 1,
+      "explain_tr": "Pestbeleid."
+    },
+    {
+      "id": "k116",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Bibliotheek lidmaatschap çocuklar?",
+      "choices": [
+        "hep pahalı",
+        "birçok yerde gençler ucuz/ücretsiz",
+        "yasak"
+      ],
+      "answer": 1,
+      "explain_tr": "Kütüphane erişimi."
+    },
+    {
+      "id": "k117",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Studiefinanciering DUO?",
+      "choices": [
+        "yok",
+        "öğrenci finansmanı DUO üzerinden olabilir",
+        "sadece nakit sokak"
+      ],
+      "answer": 1,
+      "explain_tr": "Koşullara bağlı."
+    },
+    {
+      "id": "k118",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Stage Mittelbaar?",
+      "choices": [
+        "sadece tatil",
+        "staj eğitimin parçası olabilir",
+        "yasak"
+      ],
+      "answer": 1,
+      "explain_tr": "MBO'da stage yaygın."
+    },
+    {
+      "id": "k119",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Passend onderwijs?",
+      "choices": [
+        "tek tip",
+        "ihtiyaca uygun eğitim desteği fikri",
+        "sadece spor"
+      ],
+      "answer": 1,
+      "explain_tr": "Özel ihtiyaç desteği."
+    },
+    {
+      "id": "k120",
+      "theme": "onderwijs",
+      "theme_nl": "Onderwijs en opvoeding",
+      "theme_tr": "Eğitim ve çocuk yetiştirme",
+      "q": "Rapport / cijferlijst?",
+      "choices": [
+        "alışveriş listesi",
+        "karne / not dökümü",
+        "pasaport"
+      ],
+      "answer": 1,
+      "explain_tr": "Okul başarısı belgesi."
+    }
+  ]
+}

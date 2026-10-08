@@ -1,0 +1,1141 @@
+[
+  {
+    "id": "r01",
+    "title": "Brief gemeente — oud papier",
+    "type": "brief",
+    "text": "Beste bewoner,\n\nOp maandag 19 oktober halen wij het oud papier op. Zet uw papier voor 7.30 uur aan de straat. Gebruik een doos of een papieren zak. Plastic zakken nemen wij niet mee. Vragen? Bel 14 020, ma–vr 9.00–17.00 uur.\n\nMet vriendelijke groet,\nGemeente Utrecht",
+    "questions": [
+      {
+        "q": "Wanneer haalt de gemeente het oud papier op?",
+        "choices": [
+          "zondag 18 oktober",
+          "maandag 19 oktober",
+          "vrijdag 23 oktober"
+        ],
+        "answer": 1,
+        "explain_tr": "Mektupta 'Op maandag 19 oktober' yazıyor."
+      },
+      {
+        "q": "Papier'i nereye koyamazsın?",
+        "choices": [
+          "bir kutu",
+          "kâğıt torba",
+          "plastik torba"
+        ],
+        "answer": 2,
+        "explain_tr": "'Plastic zakken nemen wij niet mee' — plastik torba kabul edilmez."
+      },
+      {
+        "q": "Cumartesi soru sormak istersen ne yaparsın?",
+        "choices": [
+          "saat 10'da ara",
+          "pazartesiye kadar bekle",
+          "saat 18'de ara"
+        ],
+        "answer": 1,
+        "explain_tr": "Telefon sadece pazartesi–cuma 9–17 açıktır."
+      }
+    ]
+  },
+  {
+    "id": "r02",
+    "title": "Fiets te koop",
+    "type": "advertentie",
+    "text": "FIETS TE KOOP\n\nBlauwe damesfiets, merk Batavus. Goede staat. 3 jaar geleden nieuw gekocht. Inclusief slot en twee fietstassen. Prijs: €85. Geen ruil.\n\nApp: 06-12345678 of linda@email.nl. Alleen 's avonds na 18.00 uur.",
+    "questions": [
+      {
+        "q": "Fiets yaklaşık kaç yaşında?",
+        "choices": [
+          "1 yıl",
+          "3 yıl",
+          "10 yıl"
+        ],
+        "answer": 1,
+        "explain_tr": "'3 jaar geleden nieuw gekocht'."
+      },
+      {
+        "q": "Ne dahil?",
+        "choices": [
+          "sadece kilit",
+          "kilit ve iki çanta",
+          "hiçbir şey"
+        ],
+        "answer": 1,
+        "explain_tr": "'Inclusief slot en twee fietstassen'."
+      },
+      {
+        "q": "Linda'yı ne zaman aramalısın?",
+        "choices": [
+          "sabah",
+          "öğleden sonra",
+          "akşam 18.00'den sonra"
+        ],
+        "answer": 2,
+        "explain_tr": "Sadece akşam 18.00'den sonra ulaşılır."
+      }
+    ]
+  },
+  {
+    "id": "r03",
+    "title": "E-mail school ouderavond",
+    "type": "email",
+    "text": "Onderwerp: Ouderavond 12 november\n\nBeste ouders,\n\nOp dinsdag 12 november is er een ouderavond. De avond begint om 19.30 uur in de aula. U kunt met de leerkracht praten. Meld u vóór 5 november aan via het ouderportaal.\n\nMet vriendelijke groet,\nMevrouw de Vries\nDirecteur Basisschool De Zon",
+    "questions": [
+      {
+        "q": "Ouderavond nerede?",
+        "choices": [
+          "sınıfta",
+          "aulada",
+          "evde"
+        ],
+        "answer": 1,
+        "explain_tr": "'in de aula'."
+      },
+      {
+        "q": "Ne zamana kadar kayıt?",
+        "choices": [
+          "5 Kasım'dan önce",
+          "12 Kasım'da",
+          "5 Kasım'dan sonra"
+        ],
+        "answer": 0,
+        "explain_tr": "'vóór 5 november'."
+      },
+      {
+        "q": "Nasıl kayıt olursun?",
+        "choices": [
+          "telefon",
+          "ouderportaal",
+          "mektup"
+        ],
+        "answer": 1,
+        "explain_tr": "Ouderportaal üzerinden."
+      }
+    ]
+  },
+  {
+    "id": "r04",
+    "title": "Bibliotheek openingstijden",
+    "type": "bericht",
+    "text": "BIBLIOTHEEK ROTTERDAM — CENTRUM\n\nMaandag: gesloten\nDi–vr: 10.00–20.00\nZa: 10.00–17.00\nZo: 12.00–16.00\n\nZomervakantie (juli–augustus): di–vr tot 18.00.\nLidmaatschap: €25/jaar. Kinderen tot 18 gratis.",
+    "questions": [
+      {
+        "q": "Hangi gün kapalı?",
+        "choices": [
+          "pazar",
+          "pazartesi",
+          "cumartesi"
+        ],
+        "answer": 1,
+        "explain_tr": "Maandag: gesloten."
+      },
+      {
+        "q": "Cumartesi kaçta kapanır?",
+        "choices": [
+          "16.00",
+          "17.00",
+          "20.00"
+        ],
+        "answer": 1,
+        "explain_tr": "Za: 10.00–17.00."
+      },
+      {
+        "q": "10 yaşındaki çocuk üyelik ücreti?",
+        "choices": [
+          "€25",
+          "€12,50",
+          "ücretsiz"
+        ],
+        "answer": 2,
+        "explain_tr": "18 yaş altına ücretsiz."
+      }
+    ]
+  },
+  {
+    "id": "r05",
+    "title": "Huisarts afspraak online",
+    "type": "bericht",
+    "text": "Praktijk Dr. Jansen\n\nVanaf 1 december maakt u afspraken alleen online via www.praktijkjansen.nl. Telefonisch alleen bij spoed: 06-98765432.\nOpen: ma–do 8.00–17.00, vrijdag tot 12.00.",
+    "questions": [
+      {
+        "q": "1 Aralık'tan itibaren normal randevu nasıl?",
+        "choices": [
+          "telefon",
+          "online",
+          "gelip sormak"
+        ],
+        "answer": 1,
+        "explain_tr": "Sadece online."
+      },
+      {
+        "q": "06-98765432 ne zaman?",
+        "choices": [
+          "normal randevu",
+          "acil durumda",
+          "cuma"
+        ],
+        "answer": 1,
+        "explain_tr": "Sadece spoed (acil)."
+      },
+      {
+        "q": "Cuma kaçta kapanır?",
+        "choices": [
+          "12.00",
+          "17.00",
+          "8.00"
+        ],
+        "answer": 0,
+        "explain_tr": "Vrijdag tot 12.00."
+      }
+    ]
+  },
+  {
+    "id": "r06",
+    "title": "Buslijn 7 — Marktplein",
+    "type": "rooster",
+    "text": "Buslijn 7 — richting Station Centraal\n\nHalte Marktplein:\nMa–Vr: 07:15, 07:45, daarna elk half uur tot 22:15\nZa: 08:00, daarna elk uur tot 20:00\nZo: geen bus\n\nKaartje: €2,50. Met OV-chipkaart €1,80. Kinderen onder 4 gratis.",
+    "questions": [
+      {
+        "q": "Pazar günü otobüs var mı?",
+        "choices": [
+          "evet her saat",
+          "evet yarım saatte",
+          "hayır"
+        ],
+        "answer": 2,
+        "explain_tr": "'Zo: geen bus'."
+      },
+      {
+        "q": "OV-chipkaart olmadan tek bilet?",
+        "choices": [
+          "€1,80",
+          "€2,50",
+          "ücretsiz"
+        ],
+        "answer": 1,
+        "explain_tr": "Kaartje €2,50."
+      },
+      {
+        "q": "Cumartesi ilk kalkış?",
+        "choices": [
+          "07:15",
+          "08:00",
+          "09:00"
+        ],
+        "answer": 1,
+        "explain_tr": "Za: 08:00."
+      }
+    ]
+  },
+  {
+    "id": "r07",
+    "title": "Vacature winkelmedewerker",
+    "type": "advertentie",
+    "text": "WIJ ZOEKEN: Winkelmedewerker (parttime)\n\nSupermarkt De Boom zoekt een medewerker voor 16 uur per week. Taken: vakken vullen, kassa, klanten helpen. Dagen: dinsdag, donderdag, zaterdag.\n\nEisen: Nederlands A2, 18+. Ervaring niet nodig.\nSolliciteer vóór 20 oktober: werken@deboom.nl",
+    "questions": [
+      {
+        "q": "Haftada kaç saat?",
+        "choices": [
+          "8",
+          "16",
+          "32"
+        ],
+        "answer": 1,
+        "explain_tr": "16 uur per week."
+      },
+      {
+        "q": "Hangi günler?",
+        "choices": [
+          "pt,ça,cu",
+          "sa,pe,ct",
+          "her gün"
+        ],
+        "answer": 1,
+        "explain_tr": "di, do, za."
+      },
+      {
+        "q": "Deneyim şart mı?",
+        "choices": [
+          "evet",
+          "hayır",
+          "sadece mağaza"
+        ],
+        "answer": 1,
+        "explain_tr": "Ervaring niet nodig."
+      }
+    ]
+  },
+  {
+    "id": "r08",
+    "title": "Buurtfeest in het park",
+    "type": "bericht",
+    "text": "Uitnodiging\n\nOp zaterdag 8 juni organiseren wij een buurtfeest in het park, 14.00–18.00 uur. Muziek, eten en spelletjes. Iedereen welkom!\nBreng iets lekkers mee als dat kan. Bij regen: buurthuiskamer Parkstraat 12.",
+    "questions": [
+      {
+        "q": "Yağmur yoksa nerede?",
+        "choices": [
+          "buurthuiskamer",
+          "park",
+          "ev"
+        ],
+        "answer": 1,
+        "explain_tr": "In het park."
+      },
+      {
+        "q": "Saat kaçta başlar?",
+        "choices": [
+          "12.00",
+          "14.00",
+          "18.00"
+        ],
+        "answer": 1,
+        "explain_tr": "14.00–18.00."
+      },
+      {
+        "q": "Ne getirmeleri isteniyor?",
+        "choices": [
+          "para",
+          "biraz yiyecek (mümkünse)",
+          "sandalye"
+        ],
+        "answer": 1,
+        "explain_tr": "Iets lekkers."
+      }
+    ]
+  },
+  {
+    "id": "r09",
+    "title": "Sporten in de winter",
+    "type": "artikel",
+    "text": "Sporten in de winter\n\nVeel mensen sporten minder in de winter. Het is koud en het wordt vroeg donker. Toch is bewegen belangrijk. Tips: sport overdag, of ga naar een sportschool. Wandel met een vriend. Zet warme kleren aan.\nIn Nederland kun je gratis wandelen in parken. Gemeenten hebben vaak goedkope sportcursussen.",
+    "questions": [
+      {
+        "q": "Neden kışın daha az spor?",
+        "choices": [
+          "çok pahalı",
+          "soğuk ve erken karanlık",
+          "parklar kapalı"
+        ],
+        "answer": 1,
+        "explain_tr": "Koud en vroeg donker."
+      },
+      {
+        "q": "Bir ipucu?",
+        "choices": [
+          "sadece gece spor",
+          "biriyle yürümek",
+          "spor salonuna gitme"
+        ],
+        "answer": 1,
+        "explain_tr": "Wandel met een vriend."
+      },
+      {
+        "q": "Belediye spor kursları?",
+        "choices": [
+          "pahalı",
+          "genellikle ucuz",
+          "yok"
+        ],
+        "answer": 1,
+        "explain_tr": "Goedkope sportcursussen."
+      }
+    ]
+  },
+  {
+    "id": "r10",
+    "title": "Melding kapotte lantaarn",
+    "type": "bericht",
+    "text": "Melding openbare ruimte — Gemeente Haarlem\n\nKapotte straatlantaarn gemeld:\nAdres: Kennemerstraat 45\nDatum: 3 maart\nNummer: 2026-8841\n\nWij komen binnen 10 werkdagen kijken. Reparatie meestal binnen 3 weken. U krijgt geen bericht tenzij u dat vroeg.\nVragen: fix@haarlem.nl of 14 023.",
+    "questions": [
+      {
+        "q": "Ne bozuk?",
+        "choices": [
+          "kaldırım",
+          "sokak lambası",
+          "köprü"
+        ],
+        "answer": 1,
+        "explain_tr": "Straatlantern."
+      },
+      {
+        "q": "Ne kadar sürede bakarlar?",
+        "choices": [
+          "10 iş günü",
+          "3 hafta",
+          "aynı gün"
+        ],
+        "answer": 0,
+        "explain_tr": "Binnen 10 werkdagen."
+      },
+      {
+        "q": "Bitince otomatik haber?",
+        "choices": [
+          "evet",
+          "hayır, sadece istediysen",
+          "sadece posta"
+        ],
+        "answer": 1,
+        "explain_tr": "Alleen als aangevraagd."
+      }
+    ]
+  },
+  {
+    "id": "r11",
+    "title": "Afspraak kapsalon verzetten",
+    "type": "email",
+    "text": "Van: mark@email.nl\nAan: info@kapsalonnova.nl\nOnderwerp: Afspraak verzetten\n\nHallo,\nIk heb een afspraak op vrijdag 14 maart om 15.00 uur bij Sandra. Helaas kan ik niet. Kan ik verzetten naar dinsdag 18 maart, graag in de ochtend?\nTel: 06-55443322.\nMark Bakker",
+    "questions": [
+      {
+        "q": "Mark neden yazıyor?",
+        "choices": [
+          "yeni kuaför",
+          "randevu değiştirmek",
+          "fiyat sormak"
+        ],
+        "answer": 1,
+        "explain_tr": "Afspraak verzetten."
+      },
+      {
+        "q": "İlk randevu ne zaman?",
+        "choices": [
+          "18 Mart salı",
+          "14 Mart cuma 15.00",
+          "cuma 10.00"
+        ],
+        "answer": 1,
+        "explain_tr": "Vrijdag 14 maart 15.00."
+      },
+      {
+        "q": "Ne zaman gelmek istiyor?",
+        "choices": [
+          "cuma öğleden sonra",
+          "salı sabah",
+          "çarşamba akşam"
+        ],
+        "answer": 1,
+        "explain_tr": "Dinsdagochtend."
+      }
+    ]
+  },
+  {
+    "id": "r12",
+    "title": "Zwembad renovatie",
+    "type": "bericht",
+    "text": "Zwembad De Golf — tijdelijk gesloten\n\nVan 1 t/m 28 februari gesloten wegens renovatie (kleedkamers en dak).\nZwemmen kan in Zwembad Noord (Noordweg 8), ma–zo 7.00–21.00. Uw abonnement is daar geldig.\nOp 1 maart openen wij weer.",
+    "questions": [
+      {
+        "q": "Ne kadar kapalı?",
+        "choices": [
+          "1 hafta",
+          "1–28 Şubat",
+          "1 yıl"
+        ],
+        "answer": 1,
+        "explain_tr": "1 t/m 28 februari."
+      },
+      {
+        "q": "Şubatta nerede yüzülür?",
+        "choices": [
+          "hiçbir yerde",
+          "Zwembad Noord",
+          "sadece açık hava"
+        ],
+        "answer": 1,
+        "explain_tr": "Zwembad Noord."
+      },
+      {
+        "q": "Abonelik orada geçerli mi?",
+        "choices": [
+          "hayır",
+          "evet",
+          "sadece sabah"
+        ],
+        "answer": 1,
+        "explain_tr": "Geldig."
+      }
+    ]
+  },
+  {
+    "id": "r13",
+    "title": "Pakketbezorging mislukt",
+    "type": "email",
+    "text": "Beste klant,\n\nWij konden uw pakket vandaag niet bezorgen (adres: Lindelaan 8). Het ligt klaar bij afhaalpunt PostNL, Stationsweg 2. U kunt het 7 dagen ophalen met een ID-bewijs. Of kies een nieuwe bezorgdatum via mijn.postnl.nl.\n\nMet vriendelijke groet,\nPostNL",
+    "questions": [
+      {
+        "q": "Paket nerede?",
+        "choices": [
+          "kapıda",
+          "PostNL afhaalpunt",
+          "geri gönderildi"
+        ],
+        "answer": 1,
+        "explain_tr": "Afhaalpunt Stationsweg 2."
+      },
+      {
+        "q": "Kaç gün içinde alınmalı?",
+        "choices": [
+          "1",
+          "7",
+          "30"
+        ],
+        "answer": 1,
+        "explain_tr": "7 dagen."
+      },
+      {
+        "q": "Ne gerekli?",
+        "choices": [
+          "sadece isim",
+          "kimlik",
+          "para"
+        ],
+        "answer": 1,
+        "explain_tr": "ID-bewijs."
+      }
+    ]
+  },
+  {
+    "id": "r14",
+    "title": "Werkrooster wijziging",
+    "type": "email",
+    "text": "Hallo team,\n\nVanaf volgende week verandert het rooster. Je werkt dan op maandag, woensdag en vrijdag van 9.00 tot 14.00 uur. Op dinsdag en donderdag heb je vrij.\nLaat het me vóór donderdag weten als dit een probleem is.\n\nGroet, Sara (teamleider)",
+    "questions": [
+      {
+        "q": "Yeni çalışma günleri?",
+        "choices": [
+          "sa pe ct",
+          "pt ça cu",
+          "her gün"
+        ],
+        "answer": 1,
+        "explain_tr": "ma, wo, vr."
+      },
+      {
+        "q": "Çalışma saatleri?",
+        "choices": [
+          "9–17",
+          "9–14",
+          "14–21"
+        ],
+        "answer": 1,
+        "explain_tr": "9.00–14.00."
+      },
+      {
+        "q": "Sorun varsa ne zamana haber ver?",
+        "choices": [
+          "cuma",
+          "perşembe öncesi",
+          "pazartesi"
+        ],
+        "answer": 1,
+        "explain_tr": "Vóór donderdag."
+      }
+    ]
+  },
+  {
+    "id": "r15",
+    "title": "Nieuwe openingstijden apotheek",
+    "type": "bericht",
+    "text": "Apotheek Centrum\n\nNieuwe openingstijden vanaf 1 april:\nMa–vr: 8.30–18.00\nZa: 9.00–13.00\nZo: gesloten\n\nRecepten online bestellen kan via www.apotheekcentrum.nl. Afhalen na 2 uur.\nSpoed buiten openingstijden: dienstapotheek 088-1234567.",
+    "questions": [
+      {
+        "q": "Pazar açık mı?",
+        "choices": [
+          "evet",
+          "hayır",
+          "sadece sabah"
+        ],
+        "answer": 1,
+        "explain_tr": "Zo: gesloten."
+      },
+      {
+        "q": "Online reçete sonrası ne kadar?",
+        "choices": [
+          "hemen",
+          "2 saat sonra",
+          "ertesi gün"
+        ],
+        "answer": 1,
+        "explain_tr": "Afhalen na 2 uur."
+      },
+      {
+        "q": "Mesai dışı acil?",
+        "choices": [
+          "bekle",
+          "dienstapotheek ara",
+          "hastane"
+        ],
+        "answer": 1,
+        "explain_tr": "Dienstapotheek numarası."
+      }
+    ]
+  },
+  {
+    "id": "r16",
+    "title": "Uitnodiging BBQ buren",
+    "type": "bericht",
+    "text": "Hoi buren,\n\nZondag 21 juni BBQ bij mij in de tuin, vanaf 16.00 uur. Ik zorg voor vlees en vegetarische burgers. Breng een salade of drinken mee!\nLaat me weten of je komt (app of bel 06-77889900).\n\nGroet, Tom — Huisnummer 14",
+    "questions": [
+      {
+        "q": "BBQ ne zaman başlar?",
+        "choices": [
+          "öğlen",
+          "16.00",
+          "akşam 20.00"
+        ],
+        "answer": 1,
+        "explain_tr": "Vanaf 16.00."
+      },
+      {
+        "q": "Tom ne getiriyor?",
+        "choices": [
+          "salata",
+          "et ve vejetaryen burger",
+          "içecek"
+        ],
+        "answer": 1,
+        "explain_tr": "Vlees en vegetarische burgers."
+      },
+      {
+        "q": "Nasıl haber vereceksin?",
+        "choices": [
+          "e-posta",
+          "app veya telefon",
+          "mektup"
+        ],
+        "answer": 1,
+        "explain_tr": "App of bel."
+      }
+    ]
+  },
+  {
+    "id": "r17",
+    "title": "Cursus Nederlands avond",
+    "type": "advertentie",
+    "text": "Gratis taalcursus A2 — Gemeente Eindhoven\n\nStart: 3 september. Avondgroep: di en do 19.00–21.00, 12 weken.\nLocatie: Buurthuis De Brug, Brugstraat 5.\nAanmelden vóór 20 augustus via www.eindhoven.nl/taal of bel 14 040.\nKinderopvang tijdens de les mogelijk (gratis).",
+    "questions": [
+      {
+        "q": "Kurs kaç hafta?",
+        "choices": [
+          "6",
+          "12",
+          "24"
+        ],
+        "answer": 1,
+        "explain_tr": "12 weken."
+      },
+      {
+        "q": "Hangi günler?",
+        "choices": [
+          "pt cu",
+          "sa pe",
+          "ça ct"
+        ],
+        "answer": 1,
+        "explain_tr": "di en do."
+      },
+      {
+        "q": "Son kayıt?",
+        "choices": [
+          "3 Eylül",
+          "20 Ağustos öncesi",
+          "istediğin zaman"
+        ],
+        "answer": 1,
+        "explain_tr": "Vóór 20 augustus."
+      }
+    ]
+  },
+  {
+    "id": "r18",
+    "title": "Storing warm water",
+    "type": "bericht",
+    "text": "Let op: storing warm water\n\nIn flatgebouw Merellaan 1–40 is er tot morgen 12.00 uur geen warm water door werkzaamheden. Koud water werkt wel.\nExcuses voor het ongemak. Vragen: beheer@woonstichting.nl of 088-5550100 (ma–vr 9–17).",
+    "questions": [
+      {
+        "q": "Ne çalışmıyor?",
+        "choices": [
+          "elektrik",
+          "sıcak su",
+          "asansör"
+        ],
+        "answer": 1,
+        "explain_tr": "Geen warm water."
+      },
+      {
+        "q": "Ne zamana kadar?",
+        "choices": [
+          "bugün akşam",
+          "yarın 12.00",
+          "bir hafta"
+        ],
+        "answer": 1,
+        "explain_tr": "Tot morgen 12.00."
+      },
+      {
+        "q": "Soğuk su?",
+        "choices": [
+          "yok",
+          "var",
+          "sadece gece"
+        ],
+        "answer": 1,
+        "explain_tr": "Koud water werkt wel."
+      }
+    ]
+  },
+  {
+    "id": "r19",
+    "title": "Sollicitatiegesprek bevestiging",
+    "type": "email",
+    "text": "Beste mevrouw Yılmaz,\n\nHierbij bevestigen wij uw sollicitatiegesprek op woensdag 5 februari om 10.30 uur. Adres: Kantoor FlexWerk, Stationsplein 3, 2e verdieping. Neem uw ID en cv mee.\nKunt u niet komen? Bel uiterlijk 24 uur van tevoren: 020-1234567.\n\nMet vriendelijke groet,\nHR FlexWerk",
+    "questions": [
+      {
+        "q": "Görüşme ne zaman?",
+        "choices": [
+          "5 Şubat salı",
+          "5 Şubat çarşamba 10.30",
+          "cuma"
+        ],
+        "answer": 1,
+        "explain_tr": "Woensdag 5 februari 10.30."
+      },
+      {
+        "q": "Ne getirmeli?",
+        "choices": [
+          "sadece cv",
+          "kimlik ve cv",
+          "hediye"
+        ],
+        "answer": 1,
+        "explain_tr": "ID en cv."
+      },
+      {
+        "q": "Gelemezse?",
+        "choices": [
+          "hiç haber verme",
+          "en geç 24 saat önce ara",
+          "e-posta yeter"
+        ],
+        "answer": 1,
+        "explain_tr": "Uiterlijk 24 uur van tevoren bellen."
+      }
+    ]
+  },
+  {
+    "id": "r20",
+    "title": "Museum korting",
+    "type": "advertentie",
+    "text": "Museum Stadshuis — Speciale actie\n\nDeze maand: tickets €8 i.p.v. €14. Kinderen tot 12 jaar gratis. Open di–zo 10.00–17.00. Maandag gesloten.\nOnline tickets: www.museumstadshuis.nl. Op vertoon van je museumkaart gratis toegang.",
+    "questions": [
+      {
+        "q": "Bu ay yetişkin bilet?",
+        "choices": [
+          "€14",
+          "€8",
+          "ücretsiz"
+        ],
+        "answer": 1,
+        "explain_tr": "€8 i.p.v. €14."
+      },
+      {
+        "q": "12 yaş altı?",
+        "choices": [
+          "€8",
+          "€4",
+          "ücretsiz"
+        ],
+        "answer": 2,
+        "explain_tr": "Gratis."
+      },
+      {
+        "q": "Pazartesi açık mı?",
+        "choices": [
+          "evet",
+          "hayır",
+          "sadece sabah"
+        ],
+        "answer": 1,
+        "explain_tr": "Maandag gesloten."
+      }
+    ]
+  },
+  {
+    "id": "r21",
+    "title": "Formulier inschrijving sportclub",
+    "type": "bericht",
+    "text": "Sportclub Actief — Inschrijving\n\nLidmaatschap: €25 per maand (jeugd tot 16: €15). Opzeggen: schriftelijk, 1 maand van tevoren.\nProefles: gratis op afspraak. Opening: ma–vr 7.00–22.00, za–zo 9.00–18.00.\nInfo: info@sportclubactief.nl",
+    "questions": [
+      {
+        "q": "Yetişkin aylık üyelik?",
+        "choices": [
+          "€15",
+          "€25",
+          "€40"
+        ],
+        "answer": 1,
+        "explain_tr": "€25 per maand."
+      },
+      {
+        "q": "İptal nasıl?",
+        "choices": [
+          "hemen app",
+          "yazılı, 1 ay önce",
+          "telefon yeter"
+        ],
+        "answer": 1,
+        "explain_tr": "Schriftelijk, 1 maand van tevoren."
+      },
+      {
+        "q": "Deneme dersi?",
+        "choices": [
+          "ücretli",
+          "ücretsiz randevuyla",
+          "yok"
+        ],
+        "answer": 1,
+        "explain_tr": "Gratis op afspraak."
+      }
+    ]
+  },
+  {
+    "id": "r22",
+    "title": "Weerbericht weekend",
+    "type": "artikel",
+    "text": "Weer dit weekend\n\nZaterdag: bewolkt, kans op regen in de middag. Temperatuur 12–15°C. Zondag: zonnig, 16°C. Wind matig uit het westen.\nTip: neem zaterdag een paraplu mee als u gaat wandelen.",
+    "questions": [
+      {
+        "q": "Cumartesi hava?",
+        "choices": [
+          "güneşli",
+          "bulutlu, öğleden sonra yağmur ihtimali",
+          "kar"
+        ],
+        "answer": 1,
+        "explain_tr": "Bewolkt, kans op regen."
+      },
+      {
+        "q": "Pazar sıcaklık?",
+        "choices": [
+          "12",
+          "16",
+          "20"
+        ],
+        "answer": 1,
+        "explain_tr": "16°C."
+      },
+      {
+        "q": "Cumartesi tavsiye?",
+        "choices": [
+          "şapka",
+          "şemsiye",
+          "mayo"
+        ],
+        "answer": 1,
+        "explain_tr": "Paraplu."
+      }
+    ]
+  },
+  {
+    "id": "r23",
+    "title": "Huisarts verlof",
+    "type": "bericht",
+    "text": "Praktijk De Linden\n\nDr. de Vries is met vakantie van 10 t/m 24 juli. Waarneming door Dr. Hassan (zelfde adres). Spoed: huisartsenpost 088-0030600.\nHerhaalrecepten via www.praktijkdelinden.nl.",
+    "questions": [
+      {
+        "q": "Dr. de Vries ne zaman tatilde?",
+        "choices": [
+          "tüm ağustos",
+          "10–24 Temmuz",
+          "sadece hafta sonu"
+        ],
+        "answer": 1,
+        "explain_tr": "10 t/m 24 juli."
+      },
+      {
+        "q": "Yerine kim bakıyor?",
+        "choices": [
+          "kimse",
+          "Dr. Hassan",
+          "hastane"
+        ],
+        "answer": 1,
+        "explain_tr": "Dr. Hassan."
+      },
+      {
+        "q": "Acil numara?",
+        "choices": [
+          "112 her şey için",
+          "huisartsenpost numarası",
+          "bekle"
+        ],
+        "answer": 1,
+        "explain_tr": "Huisartsenpost."
+      }
+    ]
+  },
+  {
+    "id": "r24",
+    "title": "Trein vertraging",
+    "type": "bericht",
+    "text": "NS Reisinfo\n\nTussen Utrecht en Amsterdam rijden treinen vandaag met 15–20 minuten vertraging door een seinprobleem. Extra bussen vanaf 16.00 uur vanaf Utrecht Centraal.\nCheck je reis op ns.nl of in de NS-app. Geld terug bij meer dan 30 minuten vertraging (voorwaarden op ns.nl).",
+    "questions": [
+      {
+        "q": "Gecikme ne kadar?",
+        "choices": [
+          "5 dk",
+          "15–20 dk",
+          "1 saat"
+        ],
+        "answer": 1,
+        "explain_tr": "15–20 minuten."
+      },
+      {
+        "q": "Ne zaman ekstra otobüs?",
+        "choices": [
+          "sabah",
+          "16.00'den itibaren",
+          "gece"
+        ],
+        "answer": 1,
+        "explain_tr": "Vanaf 16.00 uur."
+      },
+      {
+        "q": "30 dk üzeri gecikmede?",
+        "choices": [
+          "hiçbir şey",
+          "para iadesi mümkün",
+          "yeni bilet al"
+        ],
+        "answer": 1,
+        "explain_tr": "Geld terug (voorwaarden)."
+      }
+    ]
+  },
+  {
+    "id": "r25",
+    "title": "Kinderfeestje uitnodiging",
+    "type": "bericht",
+    "text": "Uitnodiging kinderfeestje\n\nLina wordt 7 jaar! Zaterdag 4 mei, 14.00–16.30 uur, Speeltuin De Speelberg, Speelbergstraat 9.\nGraag laten weten vóór 28 april of je kind komt. Geen cadeaus nodig — liever een boek voor de klasbibliotheek.\n\nGroet, ouders van Lina",
+    "questions": [
+      {
+        "q": "Parti ne zaman biter?",
+        "choices": [
+          "14.00",
+          "16.30",
+          "18.00"
+        ],
+        "answer": 1,
+        "explain_tr": "Tot 16.30."
+      },
+      {
+        "q": "Son RSVP?",
+        "choices": [
+          "4 Mayıs",
+          "28 Nisan öncesi",
+          "istediğin zaman"
+        ],
+        "answer": 1,
+        "explain_tr": "Vóór 28 april."
+      },
+      {
+        "q": "Hediye?",
+        "choices": [
+          "zorunlu oyuncak",
+          "gerekmez, sınıf kütüphanesine kitap tercih"
+        ],
+        "answer": 1,
+        "explain_tr": "Geen cadeaus nodig."
+      }
+    ]
+  },
+  {
+    "id": "r26",
+    "title": "Energiebesparing tip",
+    "type": "artikel",
+    "text": "Bespaar energie thuis\n\nZet de verwarming één graad lager: dat scheelt op de rekening. Douche korter. Doe lampen uit in lege kamers. Controleer of ramen goed dicht zijn.\nVeel gemeenten geven gratis advies. Kijk op de site van jouw gemeente onder 'energie'.",
+    "questions": [
+      {
+        "q": "Isıtmayı 1 derece düşürmek?",
+        "choices": [
+          "fark etmez",
+          "faturayı azaltır",
+          "yasak"
+        ],
+        "answer": 1,
+        "explain_tr": "Scheelt op de rekening."
+      },
+      {
+        "q": "Boş odalarda?",
+        "choices": [
+          "ışıkları açık bırak",
+          "ışıkları kapat",
+          "pencere aç"
+        ],
+        "answer": 1,
+        "explain_tr": "Lampen uit."
+      },
+      {
+        "q": "Belediye tavsiyesi?",
+        "choices": [
+          "ücretli hep",
+          "çoğu ücretsiz tavsiye verir",
+          "yok"
+        ],
+        "answer": 1,
+        "explain_tr": "Gratis advies."
+      }
+    ]
+  },
+  {
+    "id": "r27",
+    "title": "Afvalkalender",
+    "type": "bericht",
+    "text": "Afvalkalender — wijk Oost\n\nGrijze container: elke dinsdag\nGroene container (GFT): elke vrijdag\nPapier: eerste maandag van de maand\nPlastic: tweede woensdag van de maand\n\nZet containers vóór 7.30 uur aan de straat. Te zwaar of te vol? Dan nemen we ze niet mee.",
+    "questions": [
+      {
+        "q": "Gri konteyner hangi gün?",
+        "choices": [
+          "cuma",
+          "salı",
+          "pazartesi"
+        ],
+        "answer": 1,
+        "explain_tr": "Elke dinsdag."
+      },
+      {
+        "q": "Kâğıt ne sıklıkla?",
+        "choices": [
+          "her hafta",
+          "ayın ilk pazartesi",
+          "hiç"
+        ],
+        "answer": 1,
+        "explain_tr": "Eerste maandag van de maand."
+      },
+      {
+        "q": "Çok ağırsa?",
+        "choices": [
+          "yine alırlar",
+          "almazlar",
+          "para keserler"
+        ],
+        "answer": 1,
+        "explain_tr": "Niet mee."
+      }
+    ]
+  },
+  {
+    "id": "r28",
+    "title": "Vacature schoonmaker",
+    "type": "advertentie",
+    "text": "Schoonmaker gevraagd — kantoorpark West\n\n8 uur per week, 's ochtends 6.30–8.30, ma–do. €14 per uur. Nederlands of Engels spreken is een pré. Ervaring niet verplicht. Solliciteer met korte motivatie naar hr@westpark.nl vóór 15 maart.",
+    "questions": [
+      {
+        "q": "Haftada kaç saat?",
+        "choices": [
+          "8",
+          "20",
+          "40"
+        ],
+        "answer": 0,
+        "explain_tr": "8 uur per week."
+      },
+      {
+        "q": "Çalışma saati?",
+        "choices": [
+          "6.30–8.30",
+          "9–17",
+          "akşam"
+        ],
+        "answer": 0,
+        "explain_tr": "6.30–8.30."
+      },
+      {
+        "q": "Son başvuru?",
+        "choices": [
+          "hemen",
+          "15 Mart öncesi",
+          "Nisan"
+        ],
+        "answer": 1,
+        "explain_tr": "Vóór 15 maart."
+      }
+    ]
+  },
+  {
+    "id": "r29",
+    "title": "Bericht van de burenvereniging",
+    "type": "email",
+    "text": "Beste leden,\n\nDe jaarvergadering is op donderdag 12 september om 20.00 uur in zaal B van het buurthuis. Agenda: begroting, speeltuin en parkeren.\nKunt u niet komen? Stuur dan een mail naar secretariaat@burenvereniging.nl. Notulen komen daarna op de website.\n\nMet vriendelijke groet,\nBestuur",
+    "questions": [
+      {
+        "q": "Toplantı ne zaman?",
+        "choices": [
+          "12 Eylül perşembe 20.00",
+          "cuma",
+          "sabah"
+        ],
+        "answer": 0,
+        "explain_tr": "Donderdag 12 september 20.00."
+      },
+      {
+        "q": "Gidemeyen ne yapsın?",
+        "choices": [
+          "hiçbir şey",
+          "mail atsın",
+          "para ödesin"
+        ],
+        "answer": 1,
+        "explain_tr": "Mail naar secretariaat."
+      },
+      {
+        "q": "Tutanaklar nerede?",
+        "choices": [
+          "posta",
+          "web sitesinde",
+          "sadece salonda"
+        ],
+        "answer": 1,
+        "explain_tr": "Op de website."
+      }
+    ]
+  },
+  {
+    "id": "r30",
+    "title": "Kort nieuws: markt",
+    "type": "artikel",
+    "text": "Weekmarkt De Brink\n\nElke woensdag is er markt op De Brink van 8.00 tot 13.00 uur. Vers fruit, kaas, brood en bloemen. Pinbetaling bij de meeste kramen. Bij storm kan de markt vervallen — check de gemeentelijke app.\nTip: kom vroeg voor de beste keuze.",
+    "questions": [
+      {
+        "q": "Pazar hangi gün?",
+        "choices": [
+          "cumartesi",
+          "çarşamba",
+          "pazar"
+        ],
+        "answer": 1,
+        "explain_tr": "Elke woensdag."
+      },
+      {
+        "q": "Kaçta biter?",
+        "choices": [
+          "8.00",
+          "13.00",
+          "17.00"
+        ],
+        "answer": 1,
+        "explain_tr": "Tot 13.00."
+      },
+      {
+        "q": "Fırtınada?",
+        "choices": [
+          "mutlaka olur",
+          "iptal olabilir, app'i kontrol et",
+          "evde satış"
+        ],
+        "answer": 1,
+        "explain_tr": "Kan vervallen."
+      }
+    ]
+  }
+]

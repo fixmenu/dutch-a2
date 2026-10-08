@@ -1,0 +1,351 @@
+[
+  {
+    "id": "s01",
+    "title": "Kennismaking",
+    "type": "vraag",
+    "prompt_nl": "Vertel kort wie je bent: naam, waar je woont en wat je doet.",
+    "prompt_tr": "Soruyu Hollandaca cevapla.",
+    "model": "Ik heet [naam]. Ik woon in [plaats]. Ik werk / studeer / zoek werk.",
+    "keywords": [
+      "naam",
+      "woon",
+      "werk"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s02",
+    "title": "Weekendplannen",
+    "type": "vraag",
+    "prompt_nl": "Wat ga je dit weekend doen?",
+    "prompt_tr": "Soruyu Hollandaca cevapla.",
+    "model": "Dit weekend ga ik ... Ik wil ... misschien ...",
+    "keywords": [
+      "weekend",
+      "gaan",
+      "wil"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s03",
+    "title": "Bij de dokter",
+    "type": "situatie",
+    "prompt_nl": "Je hebt keelpijn. Bel de huisarts en vraag om een afspraak.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Goedemorgen, ik heb keelpijn. Kan ik een afspraak maken?",
+    "keywords": [
+      "keelpijn",
+      "afspraak"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s04",
+    "title": "In de winkel",
+    "type": "situatie",
+    "prompt_nl": "Je zoekt een blauwe jas in maat M. Vraag het aan een medewerker.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Heeft u een blauwe jas in maat medium? Mag ik die passen?",
+    "keywords": [
+      "jas",
+      "maat",
+      "passen"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s05",
+    "title": "Afspraak verzetten",
+    "type": "situatie",
+    "prompt_nl": "Je kunt je afspraak donderdag niet. Bel en vraag om een andere dag.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Ik kan donderdag niet. Kan ik de afspraak verzetten?",
+    "keywords": [
+      "verzetten",
+      "afspraak",
+      "niet"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s06",
+    "title": "Foto: markt",
+    "type": "beeld",
+    "prompt_nl": "Beschrijf wat je ziet op een drukke markt (mensen, kraampjes, eten).",
+    "prompt_tr": "Gördüğünü (durumu) Hollandaca anlat.",
+    "model": "Ik zie een markt. Er zijn veel mensen en kraampjes. Mensen kopen fruit.",
+    "keywords": [
+      "markt",
+      "mensen",
+      "kraampjes"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s07",
+    "title": "Foto: station",
+    "type": "beeld",
+    "prompt_nl": "Beschrijf een stationshal: reizigers, borden, treinen.",
+    "prompt_tr": "Gördüğünü (durumu) Hollandaca anlat.",
+    "model": "Ik zie een station. Mensen wachten. Er zijn borden met tijden.",
+    "keywords": [
+      "station",
+      "mensen",
+      "wachten"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s08",
+    "title": "Uitnodiging weigeren",
+    "type": "situatie",
+    "prompt_nl": "Een vriend nodigt je uit, maar je moet werken. Zeg het netjes.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Bedankt voor de uitnodiging. Helaas kan ik niet, omdat ik moet werken.",
+    "keywords": [
+      "bedankt",
+      "helaas",
+      "werken"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s09",
+    "title": "Hulp vragen",
+    "type": "situatie",
+    "prompt_nl": "Je bent de weg kwijt. Vraag hoe je naar het station komt.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Pardon, kunt u me helpen? Hoe kom ik bij het station?",
+    "keywords": [
+      "pardon",
+      "station",
+      "helpen"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s10",
+    "title": "Over je huis",
+    "type": "vraag",
+    "prompt_nl": "Beschrijf je woning kort (soort, kamers, buurt).",
+    "prompt_tr": "Soruyu Hollandaca cevapla.",
+    "model": "Ik woon in een flat met drie kamers. De buurt is rustig.",
+    "keywords": [
+      "woon",
+      "flat",
+      "kamers"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s11",
+    "title": "Eten bestellen",
+    "type": "situatie",
+    "prompt_nl": "Bestel in een café: koffie en een broodje.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Een koffie en een broodje kaas, alstublieft.",
+    "keywords": [
+      "koffie",
+      "broodje",
+      "alstublieft"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s12",
+    "title": "Klacht lawaai",
+    "type": "situatie",
+    "prompt_nl": "Zeg netjes tegen je buren dat het te hard is na 23.00.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Pardon, het is erg hard. Kunt u na elf uur rustiger zijn?",
+    "keywords": [
+      "hard",
+      "rustiger",
+      "uur"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s13",
+    "title": "Sollicitatie kort",
+    "type": "vraag",
+    "prompt_nl": "Waarom wil je deze parttime baan in de winkel?",
+    "prompt_tr": "Soruyu Hollandaca cevapla.",
+    "model": "Ik wil graag werken. Ik ben vriendelijk en ik leer snel.",
+    "keywords": [
+      "werken",
+      "vriendelijk",
+      "leren"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s14",
+    "title": "Foto: park",
+    "type": "beeld",
+    "prompt_nl": "Beschrijf een park op een zonnige dag.",
+    "prompt_tr": "Gördüğünü (durumu) Hollandaca anlat.",
+    "model": "Ik zie een park. De zon schijnt. Mensen wandelen en kinderen spelen.",
+    "keywords": [
+      "park",
+      "zon",
+      "wandelen"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s15",
+    "title": "Ziekmelden",
+    "type": "situatie",
+    "prompt_nl": "Bel je werk: je bent ziek en komt vandaag niet.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Goedemorgen, ik ben ziek. Ik kom vandaag niet werken.",
+    "keywords": [
+      "ziek",
+      "niet",
+      "werken"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s16",
+    "title": "Businformatie",
+    "type": "situatie",
+    "prompt_nl": "Vraag of bus 7 naar het centrum gaat en hoe laat.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Gaat bus zeven naar het centrum? Hoe laat vertrekt hij?",
+    "keywords": [
+      "bus",
+      "centrum",
+      "vertrekt"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s17",
+    "title": "Verjaardag",
+    "type": "vraag",
+    "prompt_nl": "Vertel over een leuk feest dat je meemaakte.",
+    "prompt_tr": "Soruyu Hollandaca cevapla.",
+    "model": "Vorige week was er een feest. Er was muziek en lekker eten. Ik was blij.",
+    "keywords": [
+      "feest",
+      "muziek",
+      "eten"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s18",
+    "title": "Formulier hulp",
+    "type": "situatie",
+    "prompt_nl": "Je snapt een formulier niet. Vraag om uitleg aan de balie.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Pardon, ik begrijp dit formulier niet. Kunt u het uitleggen?",
+    "keywords": [
+      "formulier",
+      "begrijp",
+      "uitleggen"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s19",
+    "title": "Weer",
+    "type": "vraag",
+    "prompt_nl": "Hoe is het weer vandaag en wat doe je daarom?",
+    "prompt_tr": "Soruyu Hollandaca cevapla.",
+    "model": "Vandaag regent het. Daarom neem ik een paraplu mee.",
+    "keywords": [
+      "weer",
+      "regent",
+      "paraplu"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s20",
+    "title": "Kennismaking buur",
+    "type": "situatie",
+    "prompt_nl": "Begroet een nieuwe buur en nodig uit voor koffie.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Hoi, welkom! Ik woon naast je. Zullen we koffie drinken?",
+    "keywords": [
+      "welkom",
+      "koffie",
+      "woon"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s21",
+    "title": "Foto: klaslokaal",
+    "type": "beeld",
+    "prompt_nl": "Beschrijf een klas: leerlingen, docent, bord.",
+    "prompt_tr": "Gördüğünü (durumu) Hollandaca anlat.",
+    "model": "Ik zie een klas. De docent staat voor het bord. Leerlingen zitten en luisteren.",
+    "keywords": [
+      "klas",
+      "docent",
+      "leerlingen"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s22",
+    "title": "Pakket ophalen",
+    "type": "situatie",
+    "prompt_nl": "Je haalt een pakket op. Zeg je naam en toon ID.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Goedemiddag, ik kom een pakket ophalen. Hier is mijn ID. Mijn naam is ...",
+    "keywords": [
+      "pakket",
+      "ID",
+      "naam"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s23",
+    "title": "Vrije tijd",
+    "type": "vraag",
+    "prompt_nl": "Wat doe je graag in je vrije tijd?",
+    "prompt_tr": "Soruyu Hollandaca cevapla.",
+    "model": "In mijn vrije tijd wandel ik graag. Soms kijk ik een film.",
+    "keywords": [
+      "vrije",
+      "tijd",
+      "wandel"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s24",
+    "title": "Excuses te laat",
+    "type": "situatie",
+    "prompt_nl": "Je komt te laat op een afspraak. Excuseer je.",
+    "prompt_tr": "Duruma uygun Hollandaca konuş.",
+    "model": "Sorry dat ik te laat ben. Er was file / de bus had vertraging.",
+    "keywords": [
+      "sorry",
+      "laat",
+      "vertraging"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  },
+  {
+    "id": "s25",
+    "title": "Toekomst",
+    "type": "vraag",
+    "prompt_nl": "Wat wil je over één jaar bereikt hebben in Nederland?",
+    "prompt_tr": "Soruyu Hollandaca cevapla.",
+    "model": "Over één jaar wil ik mijn inburgeringsexamen halen en beter Nederlands spreken.",
+    "keywords": [
+      "jaar",
+      "examen",
+      "Nederlands"
+    ],
+    "tip_tr": "Kısa ve net konuş. Önce ana fikri söyle, sonra bir detay ekle."
+  }
+]

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f3d6e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Dutch A2 — İnburgering Pratik</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f3d6e'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='28' fill='%23fff' font-family='sans-serif' font-weight='700'%3EA2%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#f3f6fb;--card:#fff;--p:#0f3d6e;--pd:#0a2c50;--a:#f5c542;--ok:#1a7f4b;--bad:#c0392b;--m:#5a6577;--b:#e2e8f0;--r:14px;--nav:64px;--safe:env(safe-area-inset-bottom,0px);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:#1a2332;line-height:1.45;padding-bottom:calc(var(--nav)+var(--safe)+10px);-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit}a{color:var(--p)}
+.hdr{position:sticky;top:0;z-index:40;background:linear-gradient(135deg,var(--p),#1a5a9e);color:#fff;padding:12px 16px;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.hdr h1{font-size:1.1rem}.hdr p{font-size:.78rem;opacity:.9}
+.wrap{max-width:760px;margin:0 auto;padding:14px}
+.card{background:var(--card);border:1px solid var(--b);border-radius:var(--r);padding:14px 16px;margin-bottom:12px;box-shadow:0 4px 16px rgba(15,61,110,.06)}
+.card h2{font-size:1.05rem;color:var(--p);margin-bottom:6px}.card h3{font-size:.95rem;margin:10px 0 6px}
+.muted{color:var(--m);font-size:.86rem}.badge{display:inline-block;font-size:.7rem;font-weight:700;background:#e8f0fb;color:var(--p);padding:3px 8px;border-radius:999px;margin:2px}
+.badge.ok{background:#e6f7ee;color:var(--ok)}.badge.bad{background:#fdecea;color:var(--bad)}.badge.warn{background:#fff6e0;color:#9a6b00}
+.grid{display:grid;gap:10px}.g2{grid-template-columns:1fr 1fr}@media(max-width:520px){.g2{grid-template-columns:1fr}}
+.mbtn{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:#fff;border:1px solid var(--b);border-radius:var(--r);padding:12px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.mbtn:hover{border-color:var(--p)}.mbtn .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#e8f0fb;font-size:1.25rem;flex-shrink:0}
+.mbtn strong{display:block;color:var(--p)}.mbtn span{font-size:.8rem;color:var(--m)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:none;border-radius:10px;padding:10px 14px;font-weight:650;cursor:pointer}
+.btn:disabled{opacity:.45;cursor:not-allowed}.bp{background:var(--p);color:#fff}.ba{background:var(--a);color:#1a2332}.bg{background:#eef2f7;color:var(--p)}.bok{background:var(--ok);color:#fff}.bbad{background:var(--bad);color:#fff}.bb{width:100%}.bs{padding:7px 11px;font-size:.82rem}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.rb{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.rtxt{background:#f8fafc;border-left:4px solid var(--p);padding:11px 12px;border-radius:8px;white-space:pre-wrap;font-size:.93rem;margin:8px 0}
+.ch{display:block;width:100%;text-align:left;margin:5px 0;padding:10px 12px;border-radius:10px;border:2px solid var(--b);background:#fff;cursor:pointer}
+.ch.sel{border-color:var(--p);background:#eef4fc}.ch.ok{border-color:var(--ok);background:#e6f7ee}.ch.bad{border-color:var(--bad);background:#fdecea}.ch:disabled{cursor:default}
+.exp{margin-top:8px;padding:10px;border-radius:8px;background:#fff8e6;border:1px solid #f0d98a;font-size:.86rem}
+.ta{width:100%;min-height:130px;padding:11px;border-radius:10px;border:1px solid var(--b);resize:vertical;margin:6px 0}
+input[type=text],input[type=password],input[type=number],input[type=date],select{width:100%;padding:10px;border-radius:10px;border:1px solid var(--b);margin:4px 0 10px}
+label.f{display:block;font-size:.82rem;font-weight:650;color:var(--m);margin-top:4px}
+.chip{display:inline-block;background:#e8f0fb;color:var(--p);padding:4px 9px;border-radius:999px;font-size:.78rem;margin:2px}
+.flash{min-height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;background:linear-gradient(160deg,#fff,#f0f5fc);border-radius:12px;padding:16px;border:1px solid var(--b)}
+.flash .nl{font-size:1.55rem;font-weight:750;color:var(--p)}.flash .tr{font-size:1.05rem;color:var(--m);margin-top:8px}
+.bar{height:8px;background:#e2e8f0;border-radius:999px;overflow:hidden;margin:8px 0}.bar>i{display:block;height:100%;background:var(--p);border-radius:999px}
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;background:#fff;border-top:1px solid var(--b);padding-bottom:var(--safe);height:calc(var(--nav)+var(--safe));box-shadow:0 -4px 16px rgba(0,0,0,.06)}
+.nav button{flex:1;border:none;background:0;padding:6px 2px;font-size:.62rem;color:var(--m);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px;font-weight:650}
+.nav button .ni{font-size:1.15rem}.nav button.on{color:var(--p)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}.st{background:#f0f5fc;border-radius:10px;padding:9px;text-align:center}.st .n{font-size:1.2rem;font-weight:750;color:var(--p)}.st .l{font-size:.68rem;color:var(--m)}
+.li{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--b);cursor:pointer;gap:8px}.li:last-child{border-bottom:0}
+.pill{font-size:.75rem;font-weight:700;padding:3px 8px;border-radius:999px;background:#eef2f7;color:var(--m);white-space:nowrap}
+.timer{font-variant-numeric:tabular-nums;font-weight:750;background:#1a2332;color:#fff;padding:4px 10px;border-radius:8px;font-size:.88rem}.timer.w{background:var(--bad)}
+.chat{display:flex;flex-direction:column;gap:8px;max-height:48vh;overflow:auto;margin-bottom:8px}
+.bub{max-width:92%;padding:9px 12px;border-radius:14px;font-size:.9rem;white-space:pre-wrap;word-break:break-word}
+.bub.u{align-self:flex-end;background:var(--p);color:#fff}.bub.b{align-self:flex-start;background:#eef2f7}.bub.e{align-self:flex-start;background:#fdecea;color:var(--bad)}
+.toast{position:fixed;top:70px;left:50%;transform:translateX(-50%);background:#1a2332;color:#fff;padding:9px 14px;border-radius:10px;z-index:100;font-size:.86rem}
+.model{background:#f8fafc;border:1px dashed #b8c5d6;border-radius:10px;padding:11px;white-space:pre-wrap;font-size:.88rem;margin-top:6px}
+.audio-box{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px;background:#eef4fc;border-radius:10px;margin:8px 0}
+.rec-dot{width:12px;height:12px;border-radius:50%;background:var(--bad);display:inline-block;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.3}}
+.hidden{display:none!important}.screen{animation:f .15s ease}@keyframes f{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+.plan-day{border-left:3px solid var(--p);padding:8px 10px;margin:6px 0;background:#f8fafc;border-radius:0 8px 8px 0}
+.weak{color:var(--bad);font-weight:650}
+</style>
+</head>
+<body>
+<header class="hdr"><div class="wrap" style="padding:0"><h1>🇳🇱 Dutch A2 · İnburgering</h1><p>Lezen · Luisteren · Schrijven · Spreken · KNM · Çalışma planı</p></div></header>
+<main class="wrap" id="main"></main>
+<nav class="nav" id="nav">
+<button data-n="home" class="on"><span class="ni">🏠</span>Ana</button>
+<button data-n="practice"><span class="ni">📚</span>Pratik</button>
+<button data-n="plan"><span class="ni">📅</span>Plan</button>
+<button data-n="mocks"><span class="ni">⏱️</span>Sınav</button>
+<button data-n="more"><span class="ni">⋯</span>Diğer</button>
+</nav>
+<script src="data/all-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

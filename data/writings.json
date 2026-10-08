@@ -1,0 +1,460 @@
+[
+  {
+    "id": "w01",
+    "title": "Verjaardag — gelemeyeceğim",
+    "prompt_tr": "Komşun Sanne seni cumartesi doğum gününe davet etti ama gelemiyorsun. 3–4 cümlelik kısa bir mesaj yaz: teşekkür et, gelemeyeceğini ve nedenini söyle, başka bir zaman öner.",
+    "phrases": [
+      "Bedankt voor de uitnodiging",
+      "Helaas kan ik niet komen",
+      "omdat ik...",
+      "Zullen we een andere keer afspreken?"
+    ],
+    "checklist_tr": [
+      "Teşekkür et",
+      "Gelemeyeceğini söyle",
+      "Sebep ver",
+      "Başka zaman öner",
+      "Nazik hitap/kapanış"
+    ],
+    "model": "Hoi Sanne,\n\nBedankt voor de uitnodiging! Helaas kan ik zaterdag niet komen, omdat ik moet werken. Zullen we volgende week koffie drinken?\n\nGroetjes,\n[adın]",
+    "tip_tr": "Helaas + omdat kalıbı A2'de çok işe yarar."
+  },
+  {
+    "id": "w02",
+    "title": "Okula hastalık bildirimi",
+    "prompt_tr": "Çocuğun Ali hasta, yarın okula gidemeyecek. Öğretmen juf Anita'ya kısa e-posta yaz.",
+    "phrases": [
+      "Ik wil u laten weten dat...",
+      "Ali is ziek",
+      "Hij blijft morgen thuis",
+      "Hopelijk kan hij...",
+      "Met vriendelijke groet"
+    ],
+    "checklist_tr": [
+      "Kimin hakkında yazdığını belirt",
+      "Hasta olduğunu söyle",
+      "Evde kalacağını yaz",
+      "Dönüş umudunu belirt",
+      "Resmi kapanış"
+    ],
+    "model": "Beste juf Anita,\n\nIk wil u laten weten dat Ali morgen niet naar school komt. Hij is ziek en blijft thuis. Hopelijk kan hij donderdag weer komen.\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "Okula yazarken 'Beste ...' ve 'Met vriendelijke groet' kullan."
+  },
+  {
+    "id": "w03",
+    "title": "Arkadaşa kahve randevusu",
+    "prompt_tr": "Arkadaşın Mehmet ile bu hafta sonu kahve içmek istiyorsun. Gün, saat öner ve gelebilir mi diye sor.",
+    "phrases": [
+      "Zullen we...",
+      "koffie drinken",
+      "op zaterdag",
+      "om 11.00 uur",
+      "Kun je?",
+      "Laat me weten"
+    ],
+    "checklist_tr": [
+      "Aktivite öner",
+      "Gün söyle",
+      "Saat söyle",
+      "Gelebilir mi diye sor"
+    ],
+    "model": "Hoi Mehmet,\n\nZullen we zaterdag koffie drinken? Om 11.00 uur bij Café Centraal? Kun je?\n\nGroetjes!",
+    "tip_tr": "Zullen we ...? nazik öneri için ideal."
+  },
+  {
+    "id": "w04",
+    "title": "Sipariş şikayeti",
+    "prompt_tr": "Mavi ceket sipariş ettin (44521) ama kırmızı geldi. Webshop'a kısa e-posta: sorunu anlat, değişim veya iade iste.",
+    "phrases": [
+      "Ik heb besteld...",
+      "bestelnummer",
+      "Helaas heb ik...",
+      "in plaats van",
+      "omruilen",
+      "terugbetalen"
+    ],
+    "checklist_tr": [
+      "Sipariş numarası",
+      "Sorunu anlat",
+      "Değişim/iade iste",
+      "Nazik ol"
+    ],
+    "model": "Geachte heer/mevrouw,\n\nIk heb een blauwe jas besteld (bestelnummer 44521). Helaas heb ik een rode jas ontvangen. Kunt u de jas omruilen of het geld terugbetalen?\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "Geachte heer/mevrouw resmi şikayet için uygun."
+  },
+  {
+    "id": "w05",
+    "title": "Taşınma bildirimi",
+    "prompt_tr": "1 Mayıs'ta Rotterdam Oudeweg 10'dan Utrecht Nieuwstraat 5'e taşındın. Belediyeye 3–4 cümle yaz.",
+    "phrases": [
+      "Ik ben verhuisd",
+      "op 1 mei",
+      "van ... naar ...",
+      "Mijn nieuwe adres is"
+    ],
+    "checklist_tr": [
+      "Eski adres",
+      "Yeni adres",
+      "Tarih",
+      "Net talep"
+    ],
+    "model": "Beste gemeente,\n\nIk ben op 1 mei verhuisd van Oudeweg 10, 3011 AA Rotterdam naar Nieuwstraat 5, 3512 BB Utrecht. Kunt u mijn adres wijzigen?\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "Postcode + şehir yazmayı unutma."
+  },
+  {
+    "id": "w06",
+    "title": "Gürültü notu",
+    "prompt_tr": "Komşular dün gece 02.00'ye kadar gürültü yaptı. Nazik bir not: 23.00'ten sonra sessiz olmalarını iste.",
+    "phrases": [
+      "Gisteren was er...",
+      "veel lawaai",
+      "tot 2.00 uur",
+      "Kunt u alstublieft...",
+      "na 23.00 uur"
+    ],
+    "checklist_tr": [
+      "Sorunu nazik anlat",
+      "Saati söyle",
+      "Net rica",
+      "Kibar kal"
+    ],
+    "model": "Beste buren,\n\nGisteren was er tot 2.00 uur veel lawaai. Kunt u alstublieft na 23.00 uur rustiger zijn? Dank u wel.\n\nMet vriendelijke groet,\nUw buur",
+    "tip_tr": "Şikayette bile alstublieft kullan."
+  },
+  {
+    "id": "w07",
+    "title": "İzin talebi",
+    "prompt_tr": "Patron meneer de Boer'a 10–17 Ağustos izin iste; aile ziyareti sebebiyle.",
+    "phrases": [
+      "Ik wil graag vakantie aanvragen",
+      "van ... tot ...",
+      "omdat ik...",
+      "Is dat mogelijk?"
+    ],
+    "checklist_tr": [
+      "Tarihler",
+      "Sebep",
+      "İzin sor",
+      "Kapanış"
+    ],
+    "model": "Beste meneer de Boer,\n\nIk wil graag vakantie aanvragen van 10 tot 17 augustus, omdat ik familie ga bezoeken. Is dat mogelijk?\n\nAlvast bedankt.\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "van X tot Y tarih aralığı için standart."
+  },
+  {
+    "id": "w08",
+    "title": "Doktor randevusu iptal",
+    "prompt_tr": "Perşembe 10.30 randevunu iş nedeniyle iptal et; gelecek hafta yeni randevu iste.",
+    "phrases": [
+      "Ik moet mijn afspraak annuleren",
+      "omdat ik moet werken",
+      "Kan ik een nieuwe afspraak maken"
+    ],
+    "checklist_tr": [
+      "İptal net",
+      "Tarih/saat",
+      "Sebep",
+      "Yeni randevu iste"
+    ],
+    "model": "Beste praktijk,\n\nIk moet mijn afspraak op donderdag om 10.30 uur annuleren, omdat ik moet werken. Kan ik een nieuwe afspraak maken volgende week?\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "annuleren = iptal; verzetten = erteleme."
+  },
+  {
+    "id": "w09",
+    "title": "Akşam yemeği daveti",
+    "prompt_tr": "İş arkadaşın Fatima'yı cuma 19.00'da evine yemeğe davet et; Türk yemeği pişireceğini söyle.",
+    "phrases": [
+      "Ik nodig je uit",
+      "bij mij thuis",
+      "op vrijdag om 19.00 uur",
+      "Ik kook...",
+      "Laat me weten"
+    ],
+    "checklist_tr": [
+      "Davet",
+      "Gün/saat",
+      "Yer",
+      "Yemek",
+      "Cevap iste"
+    ],
+    "model": "Hoi Fatima,\n\nIk nodig je uit voor een etentje bij mij thuis op vrijdag om 19.00 uur. Ik kook Turks eten! Laat me weten of je kunt.\n\nGroetjes,\n[adın]",
+    "tip_tr": "uitnodigen / uitnodiging kökünü öğren."
+  },
+  {
+    "id": "w10",
+    "title": "Kayıp çanta",
+    "prompt_tr": "Dün ~16.00'da 12 numaralı otobüste (Centraal yönü) siyah çantanı unuttun. Kayıp eşya birimine yaz.",
+    "phrases": [
+      "Ik ben mijn tas kwijt",
+      "in bus 12",
+      "rond 16.00 uur",
+      "zwarte tas",
+      "Heeft u hem gevonden?"
+    ],
+    "checklist_tr": [
+      "Ne kayıp",
+      "Nerede",
+      "Ne zaman",
+      "Tarif",
+      "Soru"
+    ],
+    "model": "Beste heer/mevrouw,\n\nIk ben gisteren rond 16.00 uur mijn zwarte tas kwijtgeraakt in bus 12 richting Centraal Station. Heeft u de tas gevonden?\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "kwijt / kwijtraken = kaybetmek."
+  },
+  {
+    "id": "w11",
+    "title": "Form: adreswijziging bank",
+    "prompt_tr": "Banka formuna kısa not: yeni adresin Nieuwstraat 5, 3512 BB Utrecht; eski adres Oudeweg 10 Rotterdam; değişiklik 1 Mayıs.",
+    "phrases": [
+      "Hierbij geef ik door",
+      "mijn nieuwe adres",
+      "met ingang van"
+    ],
+    "checklist_tr": [
+      "Yeni adres",
+      "Eski adres",
+      "Geçerlilik tarihi"
+    ],
+    "model": "Hierbij geef ik mijn nieuwe adres door: Nieuwstraat 5, 3512 BB Utrecht (was: Oudeweg 10, Rotterdam). Met ingang van 1 mei.\n\nHandtekening: [adın]",
+    "tip_tr": "met ingang van = itibariyle."
+  },
+  {
+    "id": "w12",
+    "title": "İş başvurusu kısa mail",
+    "prompt_tr": "Süpermarkette part-time iş ilanına kısa başvuru maili yaz (deneyim yok, A2 Hollandaca, 18+).",
+    "phrases": [
+      "Ik solliciteer graag",
+      "parttime",
+      "Ik spreek Nederlands op A2-niveau",
+      "Ik ben gemotiveerd"
+    ],
+    "checklist_tr": [
+      "Başvuru belirt",
+      "İlanı/pozisyonu an",
+      "Kısa kendini tanıt",
+      "CV ekini belirt"
+    ],
+    "model": "Geachte heer/mevrouw,\n\nIk solliciteer graag op de vacature winkelmedewerker. Ik spreek Nederlands op A2-niveau en ik ben 18+. Ik heb weinig ervaring, maar ik leer snel. Mijn cv stuur ik mee.\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "solliciteren = başvurmak."
+  },
+  {
+    "id": "w13",
+    "title": "Kütüphane kitap gecikme",
+    "prompt_tr": "Kitabı 1 hafta geç getirdin; özür dile ve ne zaman getireceğini söyle.",
+    "phrases": [
+      "Excuses",
+      "Ik ben te laat",
+      "Ik breng het boek terug",
+      "op ..."
+    ],
+    "checklist_tr": [
+      "Özür",
+      "Geç olduğunu kabul",
+      "Ne zaman getireceğin"
+    ],
+    "model": "Beste bibliotheek,\n\nExcuses, ik ben te laat met het inleveren van mijn boek. Ik breng het morgen vóór 17.00 uur terug.\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "Excuses / Sorry ikisi de olur; resmi için Excuses."
+  },
+  {
+    "id": "w14",
+    "title": "Spor dersi iptali",
+    "prompt_tr": "Salı yoga dersine gelemeyeceğini bildir; bir sonraki derse katılmak istediğini söyle.",
+    "phrases": [
+      "Ik kan dinsdag niet komen",
+      "naar de yogales",
+      "Ik kom graag volgende week"
+    ],
+    "checklist_tr": [
+      "İptal",
+      "Hangi ders",
+      "Sonraki hafta isteği"
+    ],
+    "model": "Hoi,\n\nIk kan dinsdag niet naar de yogales komen. Ik kom graag volgende week weer.\n\nGroetjes,\n[adın]",
+    "tip_tr": "Kısa mesajlarda Hoi + Groetjes yeter."
+  },
+  {
+    "id": "w15",
+    "title": "Ev sahibi — ısıtma bozuk",
+    "prompt_tr": "Isıtma çalışmıyor; ev sahibine yaz, ne zaman bakabileceğini sor.",
+    "phrases": [
+      "De verwarming doet het niet",
+      "Kunt u langskomen?",
+      "Het is koud in huis"
+    ],
+    "checklist_tr": [
+      "Sorunu belirt",
+      "Rica",
+      "İletişim bırak"
+    ],
+    "model": "Beste heer/mevrouw,\n\nDe verwarming in mijn woning doet het niet. Het is koud in huis. Kunt u zo snel mogelijk langskomen of iemand sturen? Mijn telefoonnummer is 06-11223344.\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "doet het niet = çalışmıyor."
+  },
+  {
+    "id": "w16",
+    "title": "Teşekkür mesajı",
+    "prompt_tr": "Komşun sana taşınmada yardım etti; teşekkür mesajı yaz ve kahveye davet et.",
+    "phrases": [
+      "Heel erg bedankt",
+      "voor je hulp",
+      "Zullen we koffie drinken?"
+    ],
+    "checklist_tr": [
+      "Teşekkür",
+      "Ne için",
+      "Küçük davet"
+    ],
+    "model": "Hoi,\n\nHeel erg bedankt voor je hulp bij mijn verhuizing! Zullen we deze week koffie drinken? Ik trakteer.\n\nGroetjes,\n[adın]",
+    "tip_tr": "Ik trakteer = ben ısmarlıyorum."
+  },
+  {
+    "id": "w17",
+    "title": "Okul gezisi izin",
+    "prompt_tr": "Çocuğunun 15 Mayıs okul gezisine katılmasına izin verdiğini öğretmenine yaz.",
+    "phrases": [
+      "Hierbij geef ik toestemming",
+      "mijn kind mag mee",
+      "op 15 mei"
+    ],
+    "checklist_tr": [
+      "İzin ver",
+      "Tarih",
+      "Çocuk adı"
+    ],
+    "model": "Beste juf/meester,\n\nHierbij geef ik toestemming dat mijn kind Ali op 15 mei meegaat op de schoolreis.\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "toestemming = izin."
+  },
+  {
+    "id": "w18",
+    "title": "Restoran rezervasyon",
+    "prompt_tr": "Cumartesi 19.00 için 4 kişilik masa rezervasyonu iste.",
+    "phrases": [
+      "Ik wil graag een tafel reserveren",
+      "voor 4 personen",
+      "op zaterdag om 19.00 uur"
+    ],
+    "checklist_tr": [
+      "Kişi sayısı",
+      "Gün/saat",
+      "İsim/telefon"
+    ],
+    "model": "Beste restaurant,\n\nIk wil graag een tafel reserveren voor 4 personen op zaterdag om 19.00 uur. Mijn naam is [adın], telefoon 06-99887766.\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "reserveren sık sınav kelimesi."
+  },
+  {
+    "id": "w19",
+    "title": "İnternet arızası",
+    "prompt_tr": "İnternet 2 gündür yok; sağlayıcıya yaz, randevu iste.",
+    "phrases": [
+      "Mijn internet werkt niet",
+      "al 2 dagen",
+      "Kunt u een monteur sturen?"
+    ],
+    "checklist_tr": [
+      "Sorun",
+      "Süre",
+      "Talep"
+    ],
+    "model": "Beste klantenservice,\n\nMijn internet werkt al 2 dagen niet. Kunt u een monteur sturen? Mijn adres is Nieuwstraat 5, Utrecht. Tel: 06-12312312.\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "al 2 dagen = 2 gündür."
+  },
+  {
+    "id": "w20",
+    "title": "İşten erken çıkma",
+    "prompt_tr": "Yarın çocuk doktoru için 15.00'te çıkman gerektiğini ekip liderine yaz.",
+    "phrases": [
+      "Ik moet eerder weg",
+      "om 15.00 uur",
+      "naar de dokter met mijn kind"
+    ],
+    "checklist_tr": [
+      "Erken çıkma",
+      "Saat",
+      "Sebep"
+    ],
+    "model": "Hoi Sara,\n\nIk moet morgen om 15.00 uur eerder weg, omdat ik met mijn kind naar de dokter moet. Is dat oké?\n\nGroet,\n[adın]",
+    "tip_tr": "İş yerinde Hoi + Is dat oké? doğal."
+  },
+  {
+    "id": "w21",
+    "title": "Form: noodcontact",
+    "prompt_tr": "Okul formuna acil durum kişisi olarak eşin Ayşe (06-55554444) bilgisini yaz.",
+    "phrases": [
+      "Noodcontact",
+      "relatie: partner",
+      "telefoonnummer"
+    ],
+    "checklist_tr": [
+      "İsim",
+      "İlişki",
+      "Telefon"
+    ],
+    "model": "Noodcontact: Ayşe Yılmaz\nRelatie: partner\nTelefoonnummer: 06-55554444\n\nHandtekening ouder: [adın]",
+    "tip_tr": "noodcontact = acil kişi."
+  },
+  {
+    "id": "w22",
+    "title": "Kurs iptali",
+    "prompt_tr": "Hollandaca kursunu mali nedenlerle iptal etmek istediğini yaz.",
+    "phrases": [
+      "Ik wil mijn inschrijving annuleren",
+      "om financiële redenen",
+      "Kunt u dit bevestigen?"
+    ],
+    "checklist_tr": [
+      "İptal",
+      "Sebep (kısa)",
+      "Onay iste"
+    ],
+    "model": "Beste cursusorganisatie,\n\nIk wil mijn inschrijving voor de taalcursus annuleren om financiële redenen. Kunt u dit per e-mail bevestigen?\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "om ... redenen = ... nedeniyle."
+  },
+  {
+    "id": "w23",
+    "title": "Doğum günü teşekkürü",
+    "prompt_tr": "Sana hediye gönderen arkadaşına teşekkür mesajı yaz.",
+    "phrases": [
+      "Dank je wel voor het cadeau",
+      "Ik was er heel blij mee"
+    ],
+    "checklist_tr": [
+      "Teşekkür",
+      "Hediye",
+      "Duygu"
+    ],
+    "model": "Hoi,\n\nDank je wel voor het cadeau! Ik was er heel blij mee. Tot snel!\n\nGroetjes,\n[adın]",
+    "tip_tr": "er blij mee = bundan mutlu."
+  },
+  {
+    "id": "w24",
+    "title": "Park yer şikayeti",
+    "prompt_tr": "Giriş her zaman arabayla kapatılıyor; belediyeye kısa şikayet yaz.",
+    "phrases": [
+      "De ingang is geblokkeerd",
+      "door een auto",
+      "Kunt u hier iets aan doen?"
+    ],
+    "checklist_tr": [
+      "Yer",
+      "Sorun",
+      "Rica"
+    ],
+    "model": "Beste gemeente,\n\nDe ingang van ons flatgebouw aan de Lindelaan wordt vaak geblokkeerd door een auto. Kunt u hier iets aan doen?\n\nMet vriendelijke groet,\n[adın]",
+    "tip_tr": "iets aan doen = bir şey yapmak."
+  },
+  {
+    "id": "w25",
+    "title": "Yeni komşuya hoş geldin",
+    "prompt_tr": "Yeni komşuya kısa hoş geldin notu; kahveye davet et.",
+    "phrases": [
+      "Welkom in de buurt",
+      "Als je vragen hebt",
+      "Zullen we kennismaken bij de koffie?"
+    ],
+    "checklist_tr": [
+      "Hoş geldin",
+      "Yardım teklifi",
+      "Davet"
+    ],
+    "model": "Hoi,\n\nWelkom in de buurt! Als je vragen hebt, kun je bij mij aankloppen. Zullen we snel kennismaken bij de koffie?\n\nGroetjes,\n[adın] (nr. 12)",
+    "tip_tr": "aankloppen = kapıyı çalmak."
+  }
+]
