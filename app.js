@@ -24,6 +24,7 @@
       history: [], mocks: [], streak: 0, lastStudy: null,
       plan: { examDates: {}, dailyMin: 45, generated: null },
       grammar: { history: [] },
+      bank: { done: {}, mocks: [] },
       weak: {}
     };
   }
@@ -59,7 +60,7 @@
     go(b.dataset.n);
   });
   function setNav(n) {
-    const map = { home: 'home', practice: 'practice', reading: 'practice', writing: 'practice', listening: 'practice', speaking: 'practice', knm: 'practice', vocab: 'practice', plan: 'plan', mocks: 'mocks', mockRun: 'mocks', grammar: 'practice', progress: 'more', tutor: 'more', settings: 'more', help: 'more', more: 'more' };
+    const map = { home: 'home', practice: 'practice', reading: 'practice', writing: 'practice', listening: 'practice', speaking: 'practice', knm: 'practice', vocab: 'practice', plan: 'plan', mocks: 'mocks', mockRun: 'mocks', grammar: 'practice', bank: 'practice', bankList: 'practice', bankItem: 'practice', bankMock: 'mocks', progress: 'more', tutor: 'more', settings: 'more', help: 'more', more: 'more' };
     document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.n === (map[n] || n)));
   }
   function go(screen, opts = {}) {
@@ -105,7 +106,8 @@
       writing: viewWritingList, writingDetail: viewWritingDetail, listening: viewListenList, listeningDetail: viewListenDetail,
       speaking: viewSpeakList, speakingDetail: viewSpeakDetail, knm: viewKnm, vocab: viewVocab,
       plan: viewPlan, mocks: viewMocks, mockRun: viewMockRun, progress: viewProgress,
-      tutor: viewTutor, settings: viewSettings, help: viewHelp, more: viewMore, grammar: viewGrammar
+      tutor: viewTutor, settings: viewSettings, help: viewHelp, more: viewMore, grammar: viewGrammar,
+      bank: viewBank, bankList: viewBankList, bankItem: viewBankItem, bankMock: viewBankMock
     };
     main.innerHTML = `<div class="screen">${(views[state.screen] || viewHome)()}</div>`;
     bind();
@@ -124,6 +126,7 @@
           <div class="st"><div class="n">${progress.mocks.length}</div><div class="l">Deneme</div></div>
         </div>
       </div>
+      <button class="mbtn" data-go="bank" style="margin-bottom:12px;border:2px solid var(--p);background:#eef4fc"><span class="ic">🗂️</span><div><strong>Sınav Soru Bankası</strong><span>${window.EXAM_BANK ? (EXAM_BANK.lezen.length + ' metin · ' + EXAM_BANK.luisteren.length + ' dinleme · ' + EXAM_BANK.knm.length + ' KNM · ' + EXAM_BANK.schrijven.length + ' yazma · ' + EXAM_BANK.spreken.length + ' konuşma') : ''} · resmi formatta denemeler</span></div></button>
       <button class="mbtn" data-go="grammar" style="margin-bottom:12px;border:2px solid var(--a);background:#fffbea"><span class="ic" style="background:var(--a)">📝</span><div><strong>Gramer Testi</strong><span>${(window.GRAMMAR_TEST||{questions:[]}).questions.length} soru · ayrılabilen fiiller, op, fiil yeri, naar/bij</span></div></button>
       <div class="card">
         <h2>Bugünün planı</h2>
@@ -144,6 +147,7 @@
   function viewPractice() {
     return `<div class="card"><h2>Pratik bölümleri</h2>
       <div class="grid">
+        <button class="mbtn" data-go="bank" style="border:2px solid var(--p)"><span class="ic">🗂️</span><div><strong>Sınav Soru Bankası</strong><span>Bölüm ve konuya göre</span></div></button>
         <button class="mbtn" data-go="grammar" style="border:2px solid var(--a)"><span class="ic">📝</span><div><strong>Gramer Testi</strong><span>${(window.GRAMMAR_TEST||{questions:[]}).questions.length} soru · 5 konu</span></div></button>
         <button class="mbtn" data-go="reading"><span class="ic">📖</span><div><strong>Lezen</strong><span>${D.readings.length} metin</span></div></button>
         <button class="mbtn" data-go="listening"><span class="ic">🎧</span><div><strong>Luisteren</strong><span>${D.listening.length} dinleme</span></div></button>
@@ -437,6 +441,8 @@
   function viewMocks() {
     return `<div class="card"><h2>Deneme sınavları</h2>
       <p class="muted">Süreler resmi DUO A2 sürelerine yakındır. Geçme eşiği resmi cesuur yayımlanmadığı için tahmini (~%70).</p>
+      <div class="li" style="cursor:default;background:#eef4fc;border-radius:10px;padding:10px;margin-bottom:6px"><div><strong>🗂️ Soru Bankası denemeleri (resmi format)</strong><div class="muted">Lezen 25/65dk · Luisteren 25/45dk · KNM 40/45dk · Schrijven 4/40dk · Spreken 16/35dk</div></div>
+        <button class="btn bp bs" data-go="bank">Aç</button></div>
       <div class="li" style="cursor:default;background:#fffbea;border-radius:10px;padding:10px"><div><strong>📝 Gramer Testi (uzun)</strong><div class="muted">${(window.GRAMMAR_TEST||{questions:[]}).questions.length} soru · 5 konu · Türkçe açıklama</div></div>
         <button class="btn ba bs" data-go="grammar">Aç</button></div>
       ${mockMenu().map(m => `
@@ -728,6 +734,7 @@
     document.querySelectorAll('[data-kid]').forEach(el => el.addEventListener('click', () => go('knm', { sub: 'q', id: el.dataset.kid, answers: {}, checked: false })));
     document.querySelectorAll('[data-mock]').forEach(el => el.addEventListener('click', () => startMock(el.dataset.mock)));
     bindGrammar();
+    bindBank();
 
     document.querySelectorAll('.ch[data-qi]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1170,6 +1177,367 @@
     const gm = $('#gMenu'); if (gm) gm.addEventListener('click', () => go('grammar', { sub: null }));
   }
 
+  /* ===== SINAV SORU BANKASI (orijinal içerik, resmi formatta) ===== */
+  const B = window.EXAM_BANK || null;
+  const BPARTS = {
+    lezen: { ic: '📖', name: 'Lezen', n: 25, min: 65, unit: 'soru' },
+    luisteren: { ic: '🎧', name: 'Luisteren', n: 25, min: 45, unit: 'soru' },
+    knm: { ic: '🇳🇱', name: 'KNM', n: 40, min: 45, unit: 'soru' },
+    schrijven: { ic: '✍️', name: 'Schrijven', n: 4, min: 40, unit: 'görev' },
+    spreken: { ic: '🗣️', name: 'Spreken', n: 16, min: 35, unit: 'görev' }
+  };
+  const BPASS = { lezen: 18, luisteren: 18, knm: 28, schrijven: 65, spreken: 60 }; // MC: doğru sayısı; diğerleri: %
+  const OFFICIAL = [
+    { g: 'Spreken', items: [['Spreken 1', 'https://oefenexamensduo.optimumassessment.com/spa/assessment-login/#/DZ66'], ['Spreken 2', 'https://oefenexamensduo.optimumassessment.com/spa/assessment-login/#/N94P'], ['Spreken 3', 'https://oefenexamensduo.optimumassessment.com/spa/assessment-login/#/TKWW']] },
+    { g: 'Luisteren', items: [['Luisteren 1', 'https://oefenexamensduo.optimumassessment.com/spa/assessment-login/#/NCJ5'], ['Luisteren 2', 'https://oefenexamensduo.optimumassessment.com/spa/assessment-login/#/J845'], ['Luisteren 3', 'https://oefenexamensduo.optimumassessment.com/spa/assessment-login/#/5QCB']] },
+    { g: 'Lezen', items: [['Lezen 1', 'https://oefenexamensduo.optimumassessment.com/spa/assessment-login/#/RV5Y'], ['Lezen 2', 'https://oefenexamensduo.optimumassessment.com/spa/assessment-login/#/JJPV'], ['Lezen 3', 'https://oefenexamensduo.optimumassessment.com/spa/assessment-login/#/QCA1'], ['Lezen 4', 'https://oefenexamensduo.optimumassessment.com/spa/assessment-login/#/6N1Z']] },
+    { g: 'Schrijven (PDF)', items: [['Schrijven 1', 'https://www.inburgeren.nl/images/oefenexamen-schrijven-1.pdf'], ['Schrijven 2', 'https://www.inburgeren.nl/images/oefenexamen-schrijven-2.pdf'], ['Schrijven 3', 'https://www.inburgeren.nl/images/oefenexamen-schrijven-3.pdf']] },
+    { g: 'KNM', items: [['KNM 1', 'https://oefenexamensduo.optimumassessment.com/spa/assessment-login/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb250ZXh0IjoiVkpNTSJ9.-Qa5IarlRuKR5LjKwnp25UJ0scDIyVcL_OCcK4KjLqw'], ['KNM 2', 'https://oefenexamensduo.optimumassessment.com/spa/assessment-login/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb250ZXh0IjoiVlkySyJ9._lDFdnq0xhaSjrxGhvbDaqW4FsBsUREFbHBHxbzdZy4']] }
+  ];
+  function bkP() { if (!progress.bank) progress.bank = { done: {}, mocks: [] }; if (!progress.bank.done) progress.bank.done = {}; if (!progress.bank.mocks) progress.bank.mocks = []; return progress.bank; }
+  function rng(seed) { let a = seed >>> 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function sShuffle(arr, seed) { const r = rng(seed), x = arr.slice(); for (let i = x.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1));[x[i], x[j]] = [x[j], x[i]]; } return x; }
+  const topicTr = t => (B && B.meta.topicsTr[t]) || t;
+  const diffTr = d => (B && B.meta.diffTr[d]) || d;
+  const L4 = ['A', 'B', 'C', 'D'];
+  function kwScore(kw, text) {
+    const t = ' ' + String(text || '').toLowerCase() + ' ';
+    const hits = kw.filter(g => g.split('|').some(w => t.includes(w.toLowerCase())));
+    return { hits: hits.length, total: kw.length, pct: pct(hits.length, kw.length) };
+  }
+  const wCount = s => (String(s || '').trim().match(/\S+/g) || []).length;
+  const sCount = s => (String(s || '').match(/[^.!?]{3,}[.!?]/g) || []).length;
+  function bankScoreWrite(task, val) {
+    if (task.kind === 'form') {
+      const v = val || {};
+      let filled = 0, openOk = 0, open = 0;
+      task.fields.forEach((f, i) => { const x = v['f' + i]; if (x && String(x).trim()) filled++; if (f.t === 'open') { open++; if (wCount(x) >= 4) openOk++; } });
+      return { pct: Math.round(60 * filled / task.fields.length + 40 * (open ? openOk / open : 1)), detail: `Doldurulan alan: ${filled}/${task.fields.length} · Açık sorular (≥4 kelime): ${openOk}/${open}` };
+    }
+    const txt = String(val || '');
+    const w = wCount(txt), s = sCount(txt), k = kwScore(task.kw || [], txt);
+    const p = Math.round(40 * Math.min(1, w / (task.min || 20)) + 20 * Math.min(1, s / 3) + 40 * (k.total ? k.hits / k.total : 1));
+    return { pct: p, detail: `Kelime: ${w} (hedef ≥${task.min}) · Cümle: ${s} (hedef ≥3) · İçerik maddeleri: ${k.hits}/${k.total}` };
+  }
+  function bankFind(part, id) { return (B[part] || []).find(x => x.id === id); }
+  function bankItemsByTopic(part, topic) { return (B[part] || []).filter(x => !topic || x.topic === topic); }
+
+  /* --- speaking/listening audio --- */
+  let bkSpeakToken = 0;
+  async function speakLines(lines, rate) {
+    if (!window.speechSynthesis) { toast('TTS yok'); return; }
+    const tok = ++bkSpeakToken; speechSynthesis.cancel();
+    const voices = speechSynthesis.getVoices();
+    const nlv = voices.filter(v => /^nl/i.test(v.lang));
+    for (const [spk, text] of lines) {
+      if (tok !== bkSpeakToken) return;
+      await new Promise(res => {
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'nl-NL'; u.rate = rate || settings.ttsRate || 0.9;
+        if (nlv.length) u.voice = nlv[spk === 'M' && nlv.length > 1 ? 1 : 0];
+        u.pitch = spk === 'M' ? 0.8 : spk === 'V' ? 1.2 : 1;
+        u.onend = res; u.onerror = res; speechSynthesis.speak(u);
+        setTimeout(res, 3000 + text.length * 120); // güvenlik: TTS takılırsa
+      });
+    }
+  }
+
+  /* --- shared renderers --- */
+  function bkMC(q, sel, checked, attr) {
+    return `<div style="margin:10px 0"><strong>${esc(q.q)}</strong>
+      ${q.o.map((o, ci) => { let c = 'ch'; if (sel === ci) c += ' sel'; if (checked) { if (ci === q.a) c += ' ok'; else if (sel === ci) c += ' bad'; }
+      return `<button class="${c}" ${attr}="${esc(q.id)}" data-bc="${ci}" ${checked ? 'disabled' : ''}><strong>${L4[ci]}</strong> &nbsp;${esc(o)}</button>`; }).join('')}
+      ${checked ? `<div class="exp">${sel === q.a ? '✅ Doğru.' : '❌ Doğru cevap: <strong>' + L4[q.a] + '</strong>.'} ${esc(q.tr)}</div>` : ''}</div>`;
+  }
+  function bkReadText(t) { return `<div class="rtxt" ${t.mono ? 'style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;overflow-x:auto;white-space:pre"' : ''}>${esc(t.text)}</div>`; }
+  function bkWriteTask(t, val, attr) {
+    // attr: veri bağlama ön eki (data-bkt / data-bmt)
+    if (t.kind === 'form') {
+      const v = val || {};
+      return `<p>${esc(t.situation)}</p><div style="border:1px solid #c8d3e0;border-radius:10px;padding:10px;background:#fff"><strong>${esc(t.title)}</strong>
+        ${t.fields.map((f, i) => {
+          const cur = v['f' + i] || '';
+          if (f.t === 'choice') return `<div style="margin:8px 0"><div class="muted">${esc(f.l)}</div>${f.o.map(o => `<label style="display:block;margin:3px 0"><input type="radio" name="bf${i}" ${attr}f="${i}" value="${esc(o)}" ${cur === o ? 'checked' : ''}> ${esc(o)}</label>`).join('')}</div>`;
+          if (f.t === 'open') return `<div style="margin:8px 0"><div class="muted">${esc(f.l)}</div><textarea rows="2" ${attr}f="${i}" style="width:100%">${esc(cur)}</textarea></div>`;
+          return `<div style="margin:8px 0"><div class="muted">${esc(f.l)}</div><input type="text" ${attr}f="${i}" value="${esc(cur)}" style="width:100%"></div>`;
+        }).join('')}</div>`;
+    }
+    let head = '', foot = '';
+    if (t.kind === 'email') {
+      head = `<p>${esc(t.situation)}</p><p><strong>Schrijf in de e-mail:</strong></p><ul>${t.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul><p class="muted">Schrijf de e-mail. Schrijf in hele zinnen.</p>
+        <div style="border:1px solid #c8d3e0;border-radius:10px;padding:10px;background:#fff;font-size:.9rem"><div><strong>Aan:</strong> ${esc(t.to)}</div><div><strong>Onderwerp:</strong> ${esc(t.subject)}</div><hr style="border:none;border-top:1px solid #e3e8ef"><div>${esc(t.aanhef)}</div>`;
+      foot = `<div>${esc(t.slot)}</div><div class="muted">[uw naam]</div></div>`;
+    } else if (t.kind === 'wijkkrant') {
+      head = `<p>${esc(t.situation)}</p><p><strong>Denk aan:</strong></p><ul>${t.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul><div style="border:1px solid #c8d3e0;border-radius:10px;padding:10px;background:#fff">`;
+      foot = `</div>`;
+    } else if (t.kind === 'briefje') {
+      head = `<p>${esc(t.situation)}</p><div class="row" style="gap:8px;margin:8px 0">${t.pics.map((p, i) => `<div style="flex:1;min-width:80px;text-align:center;border:1px solid #c8d3e0;border-radius:10px;padding:8px;background:#fff"><div style="font-size:2rem">${p[0]}</div><div class="muted">${i + 1}${p[1] ? ' · ' + esc(p[1]) : ''}</div></div>`).join('')}</div>
+        <div style="border:1px solid #c8d3e0;border-radius:10px;padding:10px;background:#fff"><div>${esc(t.aanhef)}</div>`;
+      foot = `<div>${esc(t.slot)}</div><div class="muted">[uw naam]</div></div>`;
+    }
+    return head + `<textarea rows="6" ${attr}="1" style="width:100%;margin:6px 0" placeholder="Schrijf hier…">${esc(val || '')}</textarea>` + foot;
+  }
+  function bkSpeakPrompt(t) {
+    const secName = ['', 'Deel 1 · Video-vraag', 'Deel 2 · Eén plaatje', 'Deel 3 · Twee plaatjes', 'Deel 4 · Drie plaatjes'][t.sec];
+    let vis = '';
+    if (t.sec === 1) vis = `<div style="text-align:center;font-size:2.6rem">${esc(t.who.split(' ')[0])}</div><div class="muted" style="text-align:center">${esc(t.who.split(' ').slice(1).join(' '))} (video yerine TTS ile soruyu dinle)</div>`;
+    if (t.sec === 2) vis = `<div style="text-align:center;font-size:2.4rem;padding:8px;background:#fff;border:1px solid #c8d3e0;border-radius:10px">${esc(t.scene)}</div><div class="muted" style="text-align:center">Resim: ${esc(t.sceneTr)}</div>`;
+    if (t.sec === 3) vis = `<div class="row" style="gap:8px">${[t.a, t.b].map((p, i) => `<div style="flex:1;text-align:center;border:1px solid #c8d3e0;border-radius:10px;padding:8px;background:#fff"><div style="font-size:2.4rem">${p[0]}</div><div class="muted">${L4[i]}: ${esc(p[1])}</div></div>`).join('')}</div>`;
+    if (t.sec === 4) vis = `<div class="row" style="gap:6px">${t.pics.map((p, i) => `<div style="flex:1;text-align:center;border:1px solid #c8d3e0;border-radius:10px;padding:8px;background:#fff"><div style="font-size:2rem">${p[0]}</div><div class="muted">${i + 1}${p[1] ? ' · ' + esc(p[1]) : ''}</div></div>`).join('')}</div><div class="muted" style="text-align:center">${esc(t.person)}</div>`;
+    return `<div class="pill">${secName}</div>${vis}<p style="margin-top:8px"><strong>${esc(t.q)}</strong></p>
+      <button class="btn ba bs" data-bksay="${esc(t.id)}">🔊 Soruyu dinle</button> <span class="muted">Cevap süresi gerçek sınavda ~1 dk.</span>`;
+  }
+  function bkRecUI(textAttr, val) {
+    return `<div class="audio-box"><button class="btn bp" id="recStart">● Kaydet</button><button class="btn bg" id="recStop" disabled>■ Durdur</button>
+      <button class="btn ba" id="bkSTT">🎤 Yazıya çevir</button><span id="recStatus" class="muted"></span></div>
+      <audio id="recAudio" controls class="hidden" style="width:100%"></audio>
+      <textarea id="sText" ${textAttr} rows="3" style="width:100%" placeholder="Söylediğin cevap (STT veya yaz)">${esc(val || '')}</textarea>`;
+  }
+
+  /* --- views --- */
+  function viewBank() {
+    if (!B) return '<div class="card"><p>Soru bankası yüklenemedi (data/bank.js).</p></div>';
+    const d = bkP().done;
+    const cnt = { lezen: B.lezen.reduce((a, t) => a + t.qs.length, 0), luisteren: B.luisteren.reduce((a, t) => a + t.qs.length, 0), knm: B.knm.length, schrijven: B.schrijven.length, spreken: B.spreken.length };
+    const doneIn = part => part === 'lezen' || part === 'luisteren' ? B[part].reduce((a, t) => a + t.qs.filter(q => q.id in d).length, 0) : B[part].filter(x => x.id in d).length;
+    const sub = { lezen: `${B.lezen.length} metin · ${cnt.lezen} soru`, luisteren: `${B.luisteren.length} dinleme · ${cnt.luisteren} soru`, knm: `${cnt.knm} soru · 8 tema`, schrijven: `${cnt.schrijven} görev (e-posta, form, wijkkrant, not)`, spreken: `${cnt.spreken} görev · 4 bölüm` };
+    return `<div class="card"><h2>🗂️ Sınav Soru Bankası</h2>
+      <p class="muted">Resmi DUO A2 sınavlarının <strong>formatında</strong>, tamamen <strong>orijinal</strong> sorular. Her soruda Türkçe açıklama, konu ve zorluk etiketi var.</p>
+      <div class="grid">${Object.entries(BPARTS).map(([k, p]) => `<button class="mbtn" data-bkpart="${k}"><span class="ic">${p.ic}</span><div><strong>${p.name}</strong><span>${sub[k]} · çözülen ${doneIn(k)}/${cnt[k]}</span></div></button>`).join('')}</div></div>
+      <div class="card"><h2>📋 Resmi formatta tam denemeler</h2>
+      <p class="muted">Soru/görev sayısı ve süre resmi sınavla aynı. Bankadan çekilir; Deneme A/B/C sabit setlerdir, "Rastgele" her seferinde farklıdır.</p>
+      ${bankMockMenu()}</div>
+      ${viewOfficialCard()}`;
+  }
+  function bankMockMenu() {
+    return Object.entries(BPARTS).map(([k, p]) => `<div class="li" style="cursor:default;flex-wrap:wrap;gap:6px"><div><strong>${p.ic} ${p.name}</strong><div class="muted">${p.n} ${p.unit} · ${p.min} dk${k === 'knm' ? ' · geçme ≈28/40' : ''}${k === 'spreken' ? ' · 4 bölüm × 4' : ''}</div></div>
+      <div class="row" style="gap:4px">${[1, 2, 3].map(v => `<button class="btn bp bs" data-bkmock="${k}:${v}">${L4[v - 1]}</button>`).join('')}<button class="btn bg bs" data-bkmock="${k}:0">Rastgele</button></div></div>`).join('');
+  }
+  function viewOfficialCard() {
+    return `<div class="card"><h2>🔗 Resmi örnek sınavlar</h2>
+      <p class="muted">DUO'nun ücretsiz resmi alıştırma sınavları (inburgeren.nl). Bu uygulamada resmi içerik <strong>yoktur</strong>; sadece bağlantı. Not: DUO'ya göre Spreken alıştırması Safari'de çalışmaz; bilgisayar önerilir.</p>
+      ${OFFICIAL.map(g => `<div style="margin:6px 0"><strong>${esc(g.g)}:</strong> ${g.items.map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener" class="pill" style="display:inline-block;margin:3px 2px;text-decoration:none">${esc(n)} ↗</a>`).join('')}</div>`).join('')}
+      <a href="https://www.inburgeren.nl/examen-doen/oefenen.jsp" target="_blank" rel="noopener">inburgeren.nl › Oefenen ↗</a></div>`;
+  }
+  function viewBankList() {
+    const part = state.bpart, p = BPARTS[part], d = bkP().done;
+    const items = B[part];
+    const topics = [...new Set(items.map(x => x.topic))];
+    const list = bankItemsByTopic(part, state.btopic);
+    const status = it => {
+      if (it.qs) { const n = it.qs.filter(q => q.id in d).length, c = it.qs.filter(q => d[q.id] === 1).length; return n ? `${c}/${it.qs.length}` : ''; }
+      if (part === 'knm') return it.id in d ? (d[it.id] === 1 ? '✓' : '✗') : '';
+      return it.id in d ? d[it.id] + '%' : '';
+    };
+    const label = it => part === 'knm' ? it.q : part === 'spreken' ? `[Deel ${it.sec}] ${it.q}` : part === 'schrijven' ? `[${({ email: 'E-mail', form: 'Formulier', wijkkrant: 'Wijkkrant', briefje: 'Briefje' })[it.kind]}] ${it.title}` : it.title;
+    return `<div class="card"><button class="btn bg bs" data-go="bank">← Banka</button>
+      <h2>${p.ic} ${p.name} — soru bankası</h2>
+      <div class="row" style="flex-wrap:wrap;gap:4px;margin:6px 0"><button class="btn bs ${!state.btopic ? 'bp' : 'bg'}" data-bktopic="">Hepsi (${items.length})</button>
+      ${topics.map(t => `<button class="btn bs ${state.btopic === t ? 'bp' : 'bg'}" data-bktopic="${esc(t)}">${esc(part === 'knm' ? B.meta.knmThemes[t] : topicTr(t))} (${items.filter(x => x.topic === t).length})</button>`).join('')}</div>
+      ${part === 'knm' ? `<button class="btn ba bb" data-bkitem="${esc(list[0].id)}" style="margin-bottom:6px">▶ Bu seçimle sırayla çöz</button>` : ''}
+      ${list.map((it, i) => `<div class="li" data-bkitem="${esc(it.id)}"><div><strong>${i + 1}. ${esc(label(it))}</strong><div class="muted">${esc(topicTr(it.topic))} · ${esc(diffTr(it.diff))}${it.type ? ' · ' + esc(it.type) : ''}</div></div><span class="pill">${status(it) || '›'}</span></div>`).join('')}
+    </div>`;
+  }
+  function viewBankItem() {
+    const part = state.bpart, it = bankFind(part, state.bid), A = state.bAns || {};
+    if (!it) return '<div class="card"><p>Bulunamadı.</p></div>';
+    const back = `<button class="btn bg bs" data-bkpart="${part}">← Liste</button>`;
+    const tags = `<div class="muted">${esc(BPARTS[part].name)} · ${esc(part === 'knm' ? B.meta.knmThemes[it.topic] : topicTr(it.topic))} · ${esc(diffTr(it.diff))} · ${esc(it.id)}</div>`;
+    if (part === 'lezen' || part === 'luisteren') {
+      const allAns = it.qs.every(q => q.id in A);
+      const body = part === 'lezen' ? `<p class="muted">Lees de tekst. Beantwoord de vragen.</p>${bkReadText(it)}` :
+        `<div class="audio-box"><button class="btn bp" id="bkPlay">▶ Dinle</button><span class="muted">Dinleme: ${state.bPlays || 0} kez · gerçek sınavda tekrar dinlenebilir ama süre işler</span></div>
+         ${state.checked ? `<details open><summary>Metin (transcript)</summary><div class="rtxt">${it.lines.map(l => esc((l[0] === 'O' ? '📢' : l[0] === 'M' ? '👨' : '👩') + ' ' + l[1])).join('\n')}</div></details>` : ''}`;
+      return `<div class="card">${back}<h2>${esc(it.title)}</h2>${tags}${body}
+        ${it.qs.map(q => bkMC(q, A[q.id], state.checked, 'data-bkq')).join('')}
+        ${state.checked ? `<div class="row"><button class="btn bp" id="bkRetry">Tekrar</button>${bkNextBtn(part, it.id)}</div>` : `<button class="btn bok bb" id="bkCheck" ${allAns ? '' : 'disabled'}>Kontrol et</button>`}</div>`;
+    }
+    if (part === 'knm') {
+      const list = bankItemsByTopic('knm', state.btopic), idx = list.findIndex(x => x.id === it.id);
+      return `<div class="card">${back}<div class="row" style="justify-content:space-between"><h2>KNM ${idx + 1}/${list.length}</h2></div>${tags}
+        <div style="font-size:2.6rem;text-align:center;background:#fff;border:1px solid #c8d3e0;border-radius:10px;padding:8px;margin:6px 0">${esc(it.img)}</div>
+        ${bkMC(it, A[it.id], state.checked, 'data-bkq')}
+        ${state.checked ? `<div class="row">${bkNextBtn(part, it.id)}</div>` : `<button class="btn bok bb" id="bkCheck" ${it.id in A ? '' : 'disabled'}>Kontrol et</button>`}</div>`;
+    }
+    if (part === 'schrijven') {
+      const val = state.bVal;
+      return `<div class="card">${back}<h2>✍️ ${esc(it.title)}</h2>${tags}${bkWriteTask(it, val, 'data-bkt')}
+        <div class="row" style="margin-top:8px"><button class="btn bok" id="bkWCheck">Kontrol et</button><button class="btn bg" id="bkWModel">Örnek cevap</button></div>
+        <div id="bkWOut">${state.bOut || ''}</div>
+        <div id="bkWM" class="hidden"><div class="model">${esc(it.model)}</div><div class="exp"><strong>Kontrol listesi:</strong><ul>${it.check.map(c => `<li>${esc(c)}</li>`).join('')}</ul></div></div>${bkNextBtn(part, it.id)}</div>`;
+    }
+    if (part === 'spreken') {
+      return `<div class="card">${back}<h2>🗣️ Spreken</h2>${tags}${bkSpeakPrompt(it)}${bkRecUI('data-bks="1"', state.bVal)}
+        <div class="row" style="margin-top:8px"><button class="btn bok" id="bkSCheck">Değerlendir</button><button class="btn bg" id="bkSModel">Örnek cevap</button></div>
+        <div id="bkSOut">${state.bOut || ''}</div>
+        <div id="bkSM" class="hidden"><div class="model">${esc(it.model)}</div><div class="exp">💡 ${esc(it.tip)}</div><button class="btn ba bs" id="bkSModelTTS">🔊 Örneği dinle</button></div>${bkNextBtn(part, it.id)}</div>`;
+    }
+    return '';
+  }
+  function bkNextBtn(part, id) {
+    const list = bankItemsByTopic(part, state.btopic), i = list.findIndex(x => x.id === id), nx = list[i + 1];
+    return nx ? `<button class="btn bp" data-bkitem="${esc(nx.id)}">Sonraki ›</button>` : `<button class="btn bg" data-bkpart="${part}">Listeye dön</button>`;
+  }
+
+  /* --- mock exams from bank --- */
+  let bankTimer = null;
+  function stopBankTimer() { if (bankTimer) { clearInterval(bankTimer); bankTimer = null; } }
+  function bankBuild(part, ver) {
+    const seed = ver ? ver * 7919 + part.length * 31 : (Date.now() & 0x7fffffff);
+    const P = BPARTS[part];
+    if (part === 'lezen' || part === 'luisteren') {
+      const out = [];
+      for (const t of sShuffle(B[part], seed)) { for (const q of t.qs) { if (out.length < P.n) out.push({ tid: t.id, q }); } if (out.length >= P.n) break; }
+      return out;
+    }
+    if (part === 'knm') {
+      const themes = Object.keys(B.meta.knmThemes); let out = [];
+      themes.forEach((th, i) => { out = out.concat(sShuffle(B.knm.filter(q => q.topic === th), seed + i).slice(0, 5)); });
+      return sShuffle(out, seed + 99).map(q => ({ q }));
+    }
+    if (part === 'schrijven') {
+      const by = k => sShuffle(B.schrijven.filter(t => t.kind === k), seed + k.length);
+      const em = by('email'), fo = by('form'), wk = by('wijkkrant'), br = by('briefje');
+      const third = (seed % 2) ? wk[0] : br[0], fourth = (seed % 2) ? br[0] : em[1];
+      return [em[0], fo[0], third, fourth].map(t => ({ t }));
+    }
+    if (part === 'spreken') {
+      let out = []; [1, 2, 3, 4].forEach(s => { out = out.concat(sShuffle(B.spreken.filter(x => x.sec === s), seed + s).slice(0, 4)); });
+      return out.map(t => ({ t }));
+    }
+    return [];
+  }
+  function bankMockStart(part, ver) {
+    stopBankTimer(); stopMockTimer && stopMockTimer();
+    const P = BPARTS[part];
+    state.bm = { part, ver: +ver, items: bankBuild(part, +ver), ans: {}, texts: {}, plays: {}, cur: 0, secs: P.min * 60, finished: false, result: null, started: Date.now() };
+    bankTimer = setInterval(() => {
+      const m = state.bm; if (!m || m.finished) { stopBankTimer(); return; }
+      m.secs--; const el = $('#bmTimer'); if (el) { el.textContent = fmtTime(m.secs); el.classList.toggle('w', m.secs <= 60); }
+      if (m.secs <= 0) bankMockFinish();
+    }, 1000);
+    go('bankMock');
+  }
+  function bankMockFinish() {
+    stopBankTimer();
+    const m = state.bm; if (!m || m.finished) return;
+    m.finished = true;
+    const part = m.part, byTopic = {}; let correct = 0, total = m.items.length, score = 0, pass = false, rows = [];
+    const addT = (t, ok) => { byTopic[t] = byTopic[t] || [0, 0]; byTopic[t][1]++; if (ok) byTopic[t][0]++; };
+    const d = bkP().done;
+    if (part === 'lezen' || part === 'luisteren' || part === 'knm') {
+      m.items.forEach((it, i) => {
+        const q = it.q, sel = m.ans[i], ok = sel === q.a; if (ok) correct++;
+        const topic = part === 'knm' ? q.topic : bankFind(part, it.tid).topic; addT(topic, ok);
+        d[q.id] = ok ? 1 : 0;
+        if (!ok) rows.push(`<div style="margin:8px 0;padding:8px;background:#f8fafc;border-radius:8px"><strong>S${i + 1}.</strong> ${esc(q.q)}<div class="muted">Senin cevabın: ${sel == null ? '—' : L4[sel] + ' ' + esc(q.o[sel])}</div><div>Doğru: <strong>${L4[q.a]} ${esc(q.o[q.a])}</strong></div><div class="exp">${esc(q.tr)}</div></div>`);
+      });
+      score = pct(correct, total); pass = correct >= BPASS[part];
+    } else {
+      let sum = 0;
+      m.items.forEach((it, i) => {
+        const t = it.t, r = part === 'schrijven' ? bankScoreWrite(t, m.texts[i]) : (() => { const k = kwScore(t.kw, m.texts[i]); return { pct: k.pct, detail: `İçerik kelimeleri: ${k.hits}/${k.total}` }; })();
+        sum += r.pct; addT(t.topic, r.pct >= BPASS[part]); if (r.pct >= BPASS[part]) correct++;
+        d[t.id] = r.pct;
+        rows.push(`<div style="margin:8px 0;padding:8px;background:#f8fafc;border-radius:8px"><strong>${i + 1}. ${esc(t.title || t.q)}</strong> <span class="badge ${r.pct >= BPASS[part] ? 'ok' : 'bad'}">${r.pct}%</span><div class="muted">${esc(r.detail)}</div><div class="muted">Senin cevabın: ${esc(typeof m.texts[i] === 'object' ? Object.values(m.texts[i] || {}).join(' · ') : (m.texts[i] || '—'))}</div><div class="model">${esc(t.model)}</div>${t.tip ? `<div class="exp">💡 ${esc(t.tip)}</div>` : ''}</div>`);
+      });
+      score = Math.round(sum / Math.max(1, total)); pass = score >= BPASS[part];
+    }
+    const weak = Object.entries(byTopic).filter(([, v]) => v[0] / v[1] < 0.6).map(([k]) => part === 'knm' ? B.meta.knmThemes[k] : topicTr(k));
+    let verdict;
+    if (part === 'lezen' || part === 'luisteren') verdict = correct >= 23 ? 'Geçme şansın büyük görünüyor (23–25 doğru).' : correct >= 17 ? 'Makul bir şansın var (17–22 doğru) — zayıf konuları tekrar et.' : 'Henüz yeterli değil (<17). Daha çok alıştırma yap.';
+    else if (part === 'knm') verdict = correct >= 28 ? `Geçme sınırının (≈28/40) üstündesin: ${correct}/40.` : `Geçme sınırının (≈28/40) altındasın: ${correct}/40. Zayıf temaları çalış.`;
+    else verdict = pass ? `İyi! Ortalama %${score} (hedef ≥%${BPASS[part]}). Bu otomatik bir tahmindir; gerçek değerlendirmeyi sınav görevlisi yapar.` : `Ortalama %${score} (hedef ≥%${BPASS[part]}). Her maddeye tam cümleyle cevap vermeye çalış. (Otomatik tahmin)`;
+    const reviewTr = `${verdict}${weak.length ? ' Zayıf konular: ' + weak.join(', ') + '.' : ''}`;
+    m.result = { score, correct, total, pass, byTopic, rows: rows.join(''), reviewTr, used: BPARTS[part].min * 60 - m.secs };
+    const at = new Date().toLocaleString('tr-TR');
+    bkP().mocks.push({ part, ver: m.ver, score, correct, total, pass, at, reviewTr, byTopic });
+    progress.mocks.push({ part: part + ' bank-' + (m.ver ? L4[m.ver - 1] : 'rastgele'), score, pass, at, correct, total });
+    touchStreak(); saveP(progress);
+    if (state.screen === 'bankMock') render();
+  }
+  function viewBankMock() {
+    const m = state.bm; if (!m) return viewBank();
+    const P = BPARTS[m.part];
+    if (m.finished && m.result) {
+      const r = m.result;
+      return `<div class="card"><h2>${P.ic} ${P.name} — sonuç</h2>
+        <div class="stats"><div class="st"><div class="n">${r.score}%</div><div class="l">Skor</div></div><div class="st"><div class="n">${r.correct}/${r.total}</div><div class="l">${m.part === 'schrijven' || m.part === 'spreken' ? 'Yeterli görev' : 'Doğru'}</div></div><div class="st"><div class="n">${r.pass ? '✓' : '✗'}</div><div class="l">Tahmin</div></div></div>
+        <div class="exp" style="margin-top:8px">🇹🇷 ${esc(r.reviewTr)}</div>
+        <h3>Konulara göre</h3>${Object.entries(r.byTopic).map(([k, v]) => `<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin:4px 0"><span>${esc(m.part === 'knm' ? B.meta.knmThemes[k] : topicTr(k))}</span><span class="pill">${v[0]}/${v[1]}</span></div>`).join('')}
+        <h3>${m.part === 'schrijven' || m.part === 'spreken' ? 'Görev değerlendirmesi' : 'Yanlışların açıklaması'}</h3>${r.rows || '<p>Hepsi doğru! 🎉</p>'}
+        <div class="row" style="margin-top:10px"><button class="btn bp" data-bkmock="${m.part}:${m.ver}">Tekrar</button><button class="btn bg" data-go="bank">Banka</button><button class="btn bg" data-go="mocks">Sınavlar</button></div></div>`;
+    }
+    const it = m.items[m.cur], n = m.items.length;
+    let body = '';
+    if (m.part === 'lezen') { const t = bankFind('lezen', it.tid); body = `<div class="muted">${esc(t.title)}</div>${bkReadText(t)}${bkMC(it.q, m.ans[m.cur], false, 'data-bmq')}`; }
+    else if (m.part === 'luisteren') { const t = bankFind('luisteren', it.tid); body = `<div class="audio-box"><button class="btn bp" id="bmPlay">▶ Fragmanı dinle</button><span class="muted">${esc(t.title)} · ${m.plays[it.tid] || 0} kez dinlendi</span></div>${bkMC(it.q, m.ans[m.cur], false, 'data-bmq')}`; }
+    else if (m.part === 'knm') body = `<div style="font-size:2.6rem;text-align:center;background:#fff;border:1px solid #c8d3e0;border-radius:10px;padding:8px">${esc(it.q.img)}</div>${bkMC(it.q, m.ans[m.cur], false, 'data-bmq')}`;
+    else if (m.part === 'schrijven') body = `<h3>Opdracht ${m.cur + 1}</h3>${bkWriteTask(it.t, m.texts[m.cur], 'data-bmt')}`;
+    else body = bkSpeakPrompt(it.t) + bkRecUI('data-bmt="1"', m.texts[m.cur]);
+    const answered = m.part === 'schrijven' || m.part === 'spreken' ? Object.keys(m.texts).filter(k => m.texts[k] && (typeof m.texts[k] !== 'object' || Object.keys(m.texts[k]).length)).length : Object.keys(m.ans).length;
+    return `<div class="card"><div class="row" style="justify-content:space-between"><strong>${P.ic} ${P.name} · ${m.ver ? 'Deneme ' + L4[m.ver - 1] : 'Rastgele'}</strong><span class="timer" id="bmTimer">${fmtTime(m.secs)}</span></div>
+      <div class="muted">${m.cur + 1}/${n} · cevaplanan ${answered}/${n}</div><div class="bar"><i style="width:${pct(m.cur + 1, n)}%"></i></div>
+      ${body}
+      <div class="row" style="margin-top:10px"><button class="btn bg" id="bmPrev" ${m.cur ? '' : 'disabled'}>‹ Önceki</button>${m.cur < n - 1 ? '<button class="btn bp" id="bmNext">Sonraki ›</button>' : ''}<button class="btn bbad" id="bmEnd">Bitir</button></div>
+      <div class="row" style="flex-wrap:wrap;gap:3px;margin-top:8px">${m.items.map((_, i) => `<button class="btn bs ${i === m.cur ? 'bp' : ((m.part === 'schrijven' || m.part === 'spreken') ? m.texts[i] : m.ans[i] != null) ? 'bok' : 'bg'}" data-bmgo="${i}" style="min-width:34px;padding:4px">${i + 1}</button>`).join('')}</div></div>`;
+  }
+
+  function bindBank() {
+    document.querySelectorAll('[data-bkpart]').forEach(el => el.addEventListener('click', () => go('bankList', { bpart: el.dataset.bkpart, btopic: el.dataset.bkpart === state.bpart ? state.btopic : '' })));
+    document.querySelectorAll('[data-bktopic]').forEach(el => el.addEventListener('click', () => go('bankList', { btopic: el.dataset.bktopic })));
+    document.querySelectorAll('[data-bkitem]').forEach(el => el.addEventListener('click', () => go('bankItem', { bid: el.dataset.bkitem, bAns: {}, bPlays: 0, bVal: null, bOut: '' })));
+    document.querySelectorAll('[data-bkmock]').forEach(el => el.addEventListener('click', () => { const [p, v] = el.dataset.bkmock.split(':'); bankMockStart(p, +v); }));
+    document.querySelectorAll('[data-bksay]').forEach(el => el.addEventListener('click', () => { const t = bankFind('spreken', el.dataset.bksay); speakLines([['O', t.q]]); }));
+    const stt = $('#bkSTT'); if (stt) stt.addEventListener('click', () => { doSTT(false); });
+    // practice
+    if (state.screen === 'bankItem') {
+      const part = state.bpart, it = bankFind(part, state.bid);
+      document.querySelectorAll('[data-bkq]').forEach(el => el.addEventListener('click', () => { if (state.checked) return; state.bAns[el.dataset.bkq] = +el.dataset.bc; render(); }));
+      const chk = $('#bkCheck'); if (chk) chk.addEventListener('click', () => {
+        const qs = it.qs || [it], d = bkP().done; let c = 0;
+        qs.forEach(q => { const ok = state.bAns[q.id] === q.a; d[q.id] = ok ? 1 : 0; if (ok) c++; });
+        state.checked = true;
+        progress.history.push({ type: 'Banka ' + BPARTS[part].name, detail: it.title || it.id, score: c + '/' + qs.length, at: Date.now() });
+        touchStreak(); saveP(progress); render();
+      });
+      const rt = $('#bkRetry'); if (rt) rt.addEventListener('click', () => { state.bAns = {}; state.checked = false; render(); });
+      const pl = $('#bkPlay'); if (pl) pl.addEventListener('click', () => { state.bPlays = (state.bPlays || 0) + 1; const s = pl.nextElementSibling; if (s) s.textContent = `Dinleme: ${state.bPlays} kez · çalıyor…`; speakLines(it.lines); });
+      // schrijven
+      document.querySelectorAll('[data-bkt]').forEach(el => el.addEventListener('input', () => { state.bVal = el.value; }));
+      document.querySelectorAll('[data-bktf]').forEach(el => el.addEventListener(el.type === 'radio' ? 'change' : 'input', () => { state.bVal = Object.assign({}, state.bVal || {}, { ['f' + el.dataset.bktf]: el.value }); }));
+      const wc = $('#bkWCheck'); if (wc) wc.addEventListener('click', () => {
+        const r = bankScoreWrite(it, state.bVal); bkP().done[it.id] = r.pct; touchStreak(); saveP(progress);
+        state.bOut = `<div class="exp">Otomatik kontrol: <strong>${r.pct}%</strong><br>${esc(r.detail)}<br><span class="muted">Bu sadece biçim/içerik tahminidir; örnek cevapla karşılaştır.</span></div>`;
+        $('#bkWOut').innerHTML = state.bOut;
+      });
+      const wm = $('#bkWModel'); if (wm) wm.addEventListener('click', () => $('#bkWM').classList.remove('hidden'));
+      // spreken
+      const st = $('[data-bks]'); if (st) st.addEventListener('input', () => { state.bVal = st.value; });
+      const sc = $('#bkSCheck'); if (sc) sc.addEventListener('click', () => {
+        const txt = $('#sText').value; state.bVal = txt; const k = kwScore(it.kw, txt); bkP().done[it.id] = k.pct; touchStreak(); saveP(progress);
+        state.bOut = `<div class="exp">İçerik kapsamı: <strong>${k.hits}/${k.total}</strong> (${k.pct}%)${it.sec > 1 ? '' : ''}<br>💡 ${esc(it.tip)}</div>`;
+        $('#bkSOut').innerHTML = state.bOut;
+      });
+      const smb = $('#bkSModel'); if (smb) smb.addEventListener('click', () => $('#bkSM').classList.remove('hidden'));
+      const smt = $('#bkSModelTTS'); if (smt) smt.addEventListener('click', () => speakLines([['V', it.model]]));
+    }
+    // mock
+    if (state.screen === 'bankMock' && state.bm && !state.bm.finished) {
+      const m = state.bm;
+      document.querySelectorAll('[data-bmq]').forEach(el => el.addEventListener('click', () => { m.ans[m.cur] = +el.dataset.bc; render(); }));
+      document.querySelectorAll('[data-bmt]').forEach(el => el.addEventListener('input', () => { m.texts[m.cur] = el.value; }));
+      document.querySelectorAll('[data-bmtf]').forEach(el => el.addEventListener(el.type === 'radio' ? 'change' : 'input', () => { m.texts[m.cur] = Object.assign({}, m.texts[m.cur] || {}, { ['f' + el.dataset.bmtf]: el.value }); }));
+      const pl = $('#bmPlay'); if (pl) pl.addEventListener('click', () => { const it = m.items[m.cur]; m.plays[it.tid] = (m.plays[it.tid] || 0) + 1; speakLines(bankFind('luisteren', it.tid).lines); const s = pl.nextElementSibling; if (s) s.textContent = `${m.plays[it.tid]} kez dinlendi · çalıyor…`; });
+      const pv = $('#bmPrev'); if (pv) pv.addEventListener('click', () => { bkCapture(); m.cur--; bkStop(); render(); });
+      const nx = $('#bmNext'); if (nx) nx.addEventListener('click', () => { bkCapture(); m.cur++; bkStop(); render(); });
+      document.querySelectorAll('[data-bmgo]').forEach(el => el.addEventListener('click', () => { bkCapture(); m.cur = +el.dataset.bmgo; bkStop(); render(); }));
+      const en = $('#bmEnd'); if (en) en.addEventListener('click', () => { bkCapture(); if (confirm('Denemeyi bitir ve sonuçları gör?')) bankMockFinish(); });
+    }
+  }
+  function bkCapture() { const m = state.bm, tx = $('#sText'); if (m && !m.finished && m.part === 'spreken' && tx && tx.value) m.texts[m.cur] = tx.value; }
+  function bkStop() { bkSpeakToken++; try { speechSynthesis.cancel(); } catch { } }
+
   /* ===== PWA ===== */
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js').catch(() => { });
@@ -1178,7 +1546,8 @@
   // Expose for tests
   window.__A2V2 = {
     D, progress, loadP, saveP, startMock, finishMock, generatePlan, readiness, go, state, settings,
-    pct, shuffle, G, gramStart, gramAnswer, gramNext, gramFinish
+    pct, shuffle, G, gramStart, gramAnswer, gramNext, gramFinish,
+    B, bankMockStart, bankMockFinish, bankScoreWrite, kwScore, bankBuild, bkP, getProgress: () => progress
   };
 
   render();

@@ -52,3 +52,15 @@ Tüm sorular **orijinaldir**; resmi sınav soruları kopyalanmamıştır.
 - `app.js` — uygulama
 - `data/all-data.js` — tüm içerik
 - `sw.js`, `manifest.webmanifest` — PWA
+
+## Sınav Soru Bankası (v5, Oct 2026)
+- `data/bank.js` (`window.EXAM_BANK`) contains only **original** items written in the official DUO A2 format. No official content is included.
+  - Lezen: 40 texts / 123 Qs
+  - Luisteren: 40 fragments / 61 Qs (TTS, 2 voices)
+  - KNM: 156 Qs over 8 themes
+  - Schrijven: 20 tasks (e-mail, form, wijkkrant, briefje)
+  - Spreken: 30 tasks in 4 parts
+- Every item has a Turkish explanation plus `part`/`topic`/`diff` tags.
+- Practice by part and topic. Mock exams use the official structure: Lezen 25/65 min, Luisteren 25/45, KNM 40/45 (pass ≈28), Schrijven 4/40, Spreken 16/35. Results and a Turkish review are saved in `progress.bank`.
+- A "Resmi örnek sınavlar" card links to the official inburgeren.nl practice exams (links only).
+- Format analysis and sources: see `EXAM_FORMAT_NOTES.md`.
