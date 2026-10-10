@@ -1,5 +1,5 @@
-const CACHE='dutch-a2-v3';
-const ASSETS=['./','./index.html','./app.js','./data/all-data.js','./manifest.webmanifest'];
+const CACHE='dutch-a2-v4';
+const ASSETS=['./','./index.html','./app.js','./data/all-data.js','./data/grammar.js','./manifest.webmanifest'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS).catch(()=>{})));self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',e=>{

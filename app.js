@@ -23,6 +23,7 @@
       reading: {}, writing: {}, listening: {}, speaking: {}, knm: {}, vocab: {}, // id -> score/box
       history: [], mocks: [], streak: 0, lastStudy: null,
       plan: { examDates: {}, dailyMin: 45, generated: null },
+      grammar: { history: [] },
       weak: {}
     };
   }
@@ -58,7 +59,7 @@
     go(b.dataset.n);
   });
   function setNav(n) {
-    const map = { home: 'home', practice: 'practice', reading: 'practice', writing: 'practice', listening: 'practice', speaking: 'practice', knm: 'practice', vocab: 'practice', plan: 'plan', mocks: 'mocks', mockRun: 'mocks', progress: 'more', tutor: 'more', settings: 'more', help: 'more', more: 'more' };
+    const map = { home: 'home', practice: 'practice', reading: 'practice', writing: 'practice', listening: 'practice', speaking: 'practice', knm: 'practice', vocab: 'practice', plan: 'plan', mocks: 'mocks', mockRun: 'mocks', grammar: 'practice', progress: 'more', tutor: 'more', settings: 'more', help: 'more', more: 'more' };
     document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.n === (map[n] || n)));
   }
   function go(screen, opts = {}) {
@@ -104,7 +105,7 @@
       writing: viewWritingList, writingDetail: viewWritingDetail, listening: viewListenList, listeningDetail: viewListenDetail,
       speaking: viewSpeakList, speakingDetail: viewSpeakDetail, knm: viewKnm, vocab: viewVocab,
       plan: viewPlan, mocks: viewMocks, mockRun: viewMockRun, progress: viewProgress,
-      tutor: viewTutor, settings: viewSettings, help: viewHelp, more: viewMore
+      tutor: viewTutor, settings: viewSettings, help: viewHelp, more: viewMore, grammar: viewGrammar
     };
     main.innerHTML = `<div class="screen">${(views[state.screen] || viewHome)()}</div>`;
     bind();
@@ -123,6 +124,7 @@
           <div class="st"><div class="n">${progress.mocks.length}</div><div class="l">Deneme</div></div>
         </div>
       </div>
+      <button class="mbtn" data-go="grammar" style="margin-bottom:12px;border:2px solid var(--a);background:#fffbea"><span class="ic" style="background:var(--a)">📝</span><div><strong>Gramer Testi</strong><span>${(window.GRAMMAR_TEST||{questions:[]}).questions.length} soru · ayrılabilen fiiller, op, fiil yeri, naar/bij</span></div></button>
       <div class="card">
         <h2>Bugünün planı</h2>
         ${tasks.length ? tasks.map(t => `<div class="plan-day"><strong>${esc(t.title)}</strong><div class="muted">${esc(t.detail)} · ~${t.min} dk</div></div>`).join('') : '<p class="muted">Plan için sınav tarihi ve günlük süreyi Plan sekmesinden gir.</p>'}
@@ -142,6 +144,7 @@
   function viewPractice() {
     return `<div class="card"><h2>Pratik bölümleri</h2>
       <div class="grid">
+        <button class="mbtn" data-go="grammar" style="border:2px solid var(--a)"><span class="ic">📝</span><div><strong>Gramer Testi</strong><span>${(window.GRAMMAR_TEST||{questions:[]}).questions.length} soru · 5 konu</span></div></button>
         <button class="mbtn" data-go="reading"><span class="ic">📖</span><div><strong>Lezen</strong><span>${D.readings.length} metin</span></div></button>
         <button class="mbtn" data-go="listening"><span class="ic">🎧</span><div><strong>Luisteren</strong><span>${D.listening.length} dinleme</span></div></button>
         <button class="mbtn" data-go="writing"><span class="ic">✍️</span><div><strong>Schrijven</strong><span>${D.writings.length} yazma</span></div></button>
@@ -434,6 +437,8 @@
   function viewMocks() {
     return `<div class="card"><h2>Deneme sınavları</h2>
       <p class="muted">Süreler resmi DUO A2 sürelerine yakındır. Geçme eşiği resmi cesuur yayımlanmadığı için tahmini (~%70).</p>
+      <div class="li" style="cursor:default;background:#fffbea;border-radius:10px;padding:10px"><div><strong>📝 Gramer Testi (uzun)</strong><div class="muted">${(window.GRAMMAR_TEST||{questions:[]}).questions.length} soru · 5 konu · Türkçe açıklama</div></div>
+        <button class="btn ba bs" data-go="grammar">Aç</button></div>
       ${mockMenu().map(m => `
         <div class="li" style="cursor:default"><div><strong>${esc(m.title)}</strong><div class="muted">${esc(m.desc)}</div></div>
           <button class="btn bp bs" data-mock="${esc(m.key)}">Başlat</button></div>`).join('')}
@@ -636,6 +641,8 @@
       <h2 style="margin-top:8px">İlerleme panosu</h2>
       ${Object.values(r).map(v => `<div style="margin:8px 0"><div class="rb"><strong>${esc(v.label)}</strong><span>${v.pct}%</span></div>
         <div class="bar"><i style="width:${v.pct}%"></i></div><span class="muted">${esc(v.note)}</span></div>`).join('')}
+      <h3>Gramer Testi</h3>
+      ${((progress.grammar && progress.grammar.history) || []).slice().reverse().slice(0, 5).map(h => `<div class="li" style="cursor:default"><div>${esc(h.scope === 'all' ? 'Tüm test' : ((window.GRAMMAR_TEST.topics.find(t => t.id === h.scope) || {}).tr || h.scope))}<div class="muted">${esc(h.at)}</div></div><span class="pill">${h.score}%</span></div>`).join('') || '<p class="muted">Henüz gramer testi yok.</p>'}
       <h3>Zayıf konular (KNM)</h3>
       ${weakKnmThemes()}
       <h3>Deneme geçmişi</h3>
@@ -720,6 +727,7 @@
     document.querySelectorAll('[data-ktheme]').forEach(el => el.addEventListener('click', () => go('knm', { sub: 'theme', id: el.dataset.ktheme })));
     document.querySelectorAll('[data-kid]').forEach(el => el.addEventListener('click', () => go('knm', { sub: 'q', id: el.dataset.kid, answers: {}, checked: false })));
     document.querySelectorAll('[data-mock]').forEach(el => el.addEventListener('click', () => startMock(el.dataset.mock)));
+    bindGrammar();
 
     document.querySelectorAll('.ch[data-qi]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1022,6 +1030,146 @@
     reader.readAsText(f);
   }
 
+  /* ===== GRAMMAR TEST ===== */
+  const G = window.GRAMMAR_TEST || { topics: [], questions: [] };
+  const gNorm = s => String(s || '').toLowerCase().replace(/[.,!?;:]/g, ' ').replace(/\s+/g, ' ').trim();
+  function gTopic(id) { return G.topics.find(t => t.id === id) || { tr: id }; }
+  function gramStart(scope) {
+    const qs = scope === 'all' ? G.questions.slice() : G.questions.filter(q => q.topic === scope);
+    state.gram = { scope, qs: qs.map(q => q.id), i: 0, results: {}, given: {}, phase: 'q', built: [], bank: null, finished: false };
+    gPrepare();
+    go('grammar', { sub: 'run' });
+  }
+  function gCur() { const g = state.gram; return g && G.questions.find(q => q.id === g.qs[g.i]); }
+  function gPrepare() {
+    const q = gCur(); const g = state.gram;
+    g.built = []; g.phase = 'q';
+    if (q && q.type === 'order') {
+      let b = shuffle(q.words.map((w, i) => i));
+      // avoid presenting an already-correct order
+      if (b.map(i => q.words[i].toLowerCase()).join(' ') === q.answers[0].join(' ')) b = b.slice(1).concat(b[0]);
+      g.bank = b;
+    } else g.bank = null;
+  }
+  function gIsCorrect(q, val) {
+    if (q.type === 'mc') return val === q.answer;
+    if (q.type === 'fill') return q.accept.some(a => gNorm(a) === gNorm(val));
+    if (q.type === 'order') { const s = gNorm((val || []).join(' ')); return q.answers.some(a => gNorm(a.join(' ')) === s); }
+    return false;
+  }
+  function gramAnswer(val) {
+    const g = state.gram; const q = gCur(); if (!g || !q || g.phase !== 'q') return;
+    g.given[q.id] = q.type === 'order' ? (val || []).join(' ') : (q.type === 'mc' ? q.choices[val] : String(val || ''));
+    g.results[q.id] = gIsCorrect(q, val);
+    g.phase = 'fb';
+    render();
+  }
+  function gramNext() {
+    const g = state.gram;
+    if (g.i < g.qs.length - 1) { g.i++; gPrepare(); render(); window.scrollTo(0, 0); }
+    else gramFinish();
+  }
+  function gramFinish() {
+    const g = state.gram; if (!g || g.finished) return;
+    const per = {};
+    g.qs.forEach(id => {
+      const q = G.questions.find(x => x.id === id);
+      per[q.topic] = per[q.topic] || { ok: 0, n: 0 };
+      per[q.topic].n++; if (g.results[id]) per[q.topic].ok++;
+    });
+    const correct = g.qs.filter(id => g.results[id]).length;
+    g.finished = true; g.score = pct(correct, g.qs.length); g.correct = correct; g.per = per;
+    progress.grammar = progress.grammar || { history: [] };
+    progress.grammar.history.push({ at: new Date().toLocaleString('tr-TR'), scope: g.scope, score: g.score, correct, total: g.qs.length, perTopic: per });
+    progress.history.push({ type: 'Gramer', detail: g.scope === 'all' ? 'Tüm test' : gTopic(g.scope).tr, score: correct + '/' + g.qs.length, at: Date.now() });
+    touchStreak(); saveP(progress);
+    state.sub = 'results'; render(); window.scrollTo(0, 0);
+  }
+  function viewGrammar() {
+    const g = state.gram;
+    if (state.sub === 'run' && g && !g.finished) return viewGramQ();
+    if (state.sub === 'results' && g && g.finished) return viewGramResults();
+    const hist = (progress.grammar && progress.grammar.history) || [];
+    return `<div class="card"><h2>📝 Gramer Testi</h2>
+      <p class="muted">Sohbette konuştuğumuz konular: ayrılabilen fiiller, 'op', fiil yeri, kalıp ifadeler, naar/bij. Çoktan seçmeli, boşluk doldurma ve kelime sıralama soruları. Her cevaptan sonra Türkçe açıklama.</p>
+      <button class="btn bp bb" data-gstart="all" style="margin:8px 0">Tüm testi başlat (${G.questions.length} soru)</button>
+      <h3>Konuya göre</h3>
+      ${G.topics.map(t => {
+        const n = G.questions.filter(q => q.topic === t.id).length;
+        return `<div class="li" style="cursor:default"><div><strong>${esc(t.tr)}</strong><div class="muted">${esc(t.nl)} · ${n} soru</div></div><button class="btn bg bs" data-gstart="${esc(t.id)}">Başlat</button></div>`;
+      }).join('')}
+      <h3 style="margin-top:10px">Geçmiş</h3>
+      ${hist.slice().reverse().slice(0, 8).map(h => `<div class="li" style="cursor:default"><div>${esc(h.scope === 'all' ? 'Tüm test' : gTopic(h.scope).tr)}<div class="muted">${esc(h.at)}</div></div><span class="pill">${h.correct}/${h.total} · ${h.score}%</span></div>`).join('') || '<p class="muted">Henüz test yok.</p>'}
+    </div>`;
+  }
+  function viewGramQ() {
+    const g = state.gram; const q = gCur(); const fb = g.phase === 'fb';
+    const ok = g.results[q.id];
+    let body = '';
+    if (q.type === 'mc') {
+      const given = g.given[q.id];
+      body = q.choices.map((c, i) => {
+        let cls = 'ch';
+        if (fb) { if (i === q.answer) cls += ' ok'; else if (c === given) cls += ' bad'; }
+        return `<button class="${cls}" data-gmc="${i}" ${fb ? 'disabled' : ''}>${String.fromCharCode(97 + i)}) ${esc(c)}</button>`;
+      }).join('');
+    } else if (q.type === 'fill') {
+      body = `${q.hint ? `<p class="muted">Fiil: <strong>${esc(q.hint)}</strong> (doğru biçimde yaz)</p>` : ''}
+        <input type="text" id="gFill" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Kelimeyi yaz" value="${esc(fb ? g.given[q.id] : '')}" ${fb ? 'disabled' : ''}>
+        ${fb ? '' : '<button class="btn bp bb" id="gFillOk">Kontrol et</button>'}`;
+    } else {
+      const builtTxt = g.built.map(i => q.words[i]);
+      body = `<div class="gbuilt" id="gBuilt">${fb ? esc(g.given[q.id]) : (builtTxt.length ? g.built.map((wi, k) => `<button class="gw sel" data-gb="${k}">${esc(q.words[wi])}</button>`).join('') : '<span class="muted">Kelimelere dokun…</span>')}</div>
+        ${fb ? '' : `<div class="gbank">${g.bank.map(wi => g.built.includes(wi) ? `<span class="gw used">${esc(q.words[wi])}</span>` : `<button class="gw" data-gw="${wi}">${esc(q.words[wi])}</button>`).join('')}</div>
+        <div class="row"><button class="btn bg" id="gClear">Temizle</button><button class="btn bp" id="gOrderOk" ${g.built.length < q.words.length ? 'disabled' : ''}>Kontrol et</button></div>`}`;
+    }
+    const correctTxt = q.type === 'mc' ? q.choices[q.answer] : q.type === 'fill' ? q.accept[0] : q.answers.map(a => { const s = a.map(w => q.words.find(x => x.toLowerCase() === w) || w).join(' '); return s.charAt(0).toUpperCase() + s.slice(1) + '.'; }).join('  /  ');
+    const fbBox = fb ? `<div class="exp"><strong>${ok ? '✓ Doğru!' : '✗ Yanlış.'}</strong>${ok ? '' : ` Doğru cevap: <strong>${esc(correctTxt)}</strong>`}<br>${esc(q.explain)}</div>
+      <button class="btn bp bb" id="gNext" style="margin-top:8px">${g.i < g.qs.length - 1 ? 'Sonraki soru →' : 'Sonuçları gör'}</button>` : '';
+    return `<div class="card">
+      <div class="rb"><span class="badge">${g.i + 1}/${g.qs.length}</span><span class="badge">${esc(gTopic(q.topic).tr)}</span></div>
+      <div class="bar"><i style="width:${pct(g.i, g.qs.length)}%"></i></div>
+      <h3>${esc(q.q)}</h3>
+      ${body}${fbBox}
+      <button class="btn bg bs" id="gQuit" style="margin-top:10px">Testi bitir</button>
+    </div>`;
+  }
+  function viewGramResults() {
+    const g = state.gram;
+    const wrong = g.qs.map(id => G.questions.find(q => q.id === id)).filter(q => !g.results[q.id]);
+    return `<div class="card"><h2>Gramer Testi — Sonuç</h2>
+      <div class="stats">
+        <div class="st"><div class="n">${g.correct}/${g.qs.length}</div><div class="l">Doğru</div></div>
+        <div class="st"><div class="n">${g.score}%</div><div class="l">Puan</div></div>
+        <div class="st"><div class="n">${g.score >= 70 ? '✓' : '↻'}</div><div class="l">${g.score >= 70 ? 'İyi' : 'Tekrar et'}</div></div>
+      </div>
+      <h3>Konulara göre</h3>
+      ${Object.entries(g.per).map(([t, v]) => { const p = pct(v.ok, v.n); return `<div style="margin:6px 0"><div class="rb"><span class="${p < 60 ? 'weak' : ''}">${esc(gTopic(t).tr)}</span><span class="pill">${v.ok}/${v.n} · ${p}%</span></div><div class="bar"><i style="width:${p}%"></i></div></div>`; }).join('')}
+      <h3>Yanlış cevaplar (${wrong.length})</h3>
+      ${wrong.map(q => { const c = q.type === 'mc' ? q.choices[q.answer] : q.type === 'fill' ? q.q.replace('___', q.accept[0]) : q.answers[0].map(w => q.words.find(x => x.toLowerCase() === w) || w).join(' ');
+        return `<div style="margin:8px 0;padding:9px;background:#f8fafc;border-radius:8px"><strong>${esc(q.q)}</strong>
+        <div class="muted">Senin cevabın: ${esc(g.given[q.id] || '—')}</div><div>Doğru: <strong>${esc(c)}</strong></div><div class="exp">${esc(q.explain)}</div></div>`; }).join('') || '<p>Hepsi doğru! 🎉</p>'}
+      <div class="row" style="margin-top:10px"><button class="btn bp" data-gstart="${esc(g.scope)}">Tekrar</button><button class="btn bg" id="gMenu">Gramer menüsü</button><button class="btn bg" data-go="home">Ana sayfa</button></div>
+    </div>`;
+  }
+  function bindGrammar() {
+    document.querySelectorAll('[data-gstart]').forEach(el => el.addEventListener('click', () => gramStart(el.dataset.gstart)));
+    if (state.screen !== 'grammar') return;
+    const g = state.gram;
+    document.querySelectorAll('[data-gmc]').forEach(el => el.addEventListener('click', () => gramAnswer(+el.dataset.gmc)));
+    const fi = $('#gFill');
+    const fok = $('#gFillOk');
+    if (fok) fok.addEventListener('click', () => gramAnswer(fi.value));
+    if (fi && !fi.disabled) { fi.addEventListener('keydown', e => { if (e.key === 'Enter') gramAnswer(fi.value); }); }
+    document.querySelectorAll('[data-gw]').forEach(el => el.addEventListener('click', () => { g.built.push(+el.dataset.gw); render(); }));
+    document.querySelectorAll('[data-gb]').forEach(el => el.addEventListener('click', () => { g.built.splice(+el.dataset.gb, 1); render(); }));
+    const gc = $('#gClear'); if (gc) gc.addEventListener('click', () => { g.built = []; render(); });
+    const go2 = $('#gOrderOk'); if (go2) go2.addEventListener('click', () => { const q = gCur(); gramAnswer(g.built.map(i => q.words[i].toLowerCase())); });
+    const gn = $('#gNext'); if (gn) gn.addEventListener('click', gramNext);
+    const gq = $('#gQuit'); if (gq) gq.addEventListener('click', () => { if (confirm('Testi şimdi bitir? Cevaplanmayan sorular yanlış sayılır.')) gramFinish(); });
+    const gm = $('#gMenu'); if (gm) gm.addEventListener('click', () => go('grammar', { sub: null }));
+  }
+
   /* ===== PWA ===== */
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js').catch(() => { });
@@ -1030,7 +1178,7 @@
   // Expose for tests
   window.__A2V2 = {
     D, progress, loadP, saveP, startMock, finishMock, generatePlan, readiness, go, state, settings,
-    pct, shuffle
+    pct, shuffle, G, gramStart, gramAnswer, gramNext, gramFinish
   };
 
   render();
